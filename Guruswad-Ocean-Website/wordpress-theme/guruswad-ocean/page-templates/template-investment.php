@@ -8,7 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 get_header();
 the_post();
-gor_page_hero( array( 'eyebrow' => __( 'Investment & Partnership', 'guruswad' ), 'title' => __( 'The future grows in <em>millets</em>.', 'guruswad' ), 'lead' => __( 'An integrated millet company with a farmer base, processing capability and its own brands — open to investors and strategic partners.', 'guruswad' ) ) );
+gor_page_hero( array( 'eyebrow' => __( 'Investment & Partnership', 'guruswad' ), 'title' => __( 'The future grows in <em>millets</em>.', 'guruswad' ), 'lead' => __( 'An integrated millet company with a farmer base, processing capability and its own brands — open to investors and strategic partners.', 'guruswad' ) , 'variant' => 'invest') );
 ?>
 
 <section class="section">

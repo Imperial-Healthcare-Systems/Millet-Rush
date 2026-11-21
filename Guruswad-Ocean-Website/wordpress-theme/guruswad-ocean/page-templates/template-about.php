@@ -8,7 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 get_header();
 the_post();
-gor_page_hero( array( 'eyebrow' => __( 'About Us', 'guruswad' ), 'title' => __( 'An ancient grain. A modern <em>company</em>.', 'guruswad' ), 'lead' => __( 'Guruswad Ocean Private Limited works across agriculture, millet processing, food manufacturing and global trade — building a long-term platform for millets from Maharashtra.', 'guruswad' ) ) );
+gor_page_hero( array( 'eyebrow' => __( 'About Us', 'guruswad' ), 'title' => __( 'An ancient grain. A modern <em>company</em>.', 'guruswad' ), 'lead' => __( 'Four organisations working one chain — a farmer producer company, a farmer development association, a trading company and a food brand — built around millets from Maharashtra.', 'guruswad' ) , 'variant' => 'about') );
 ?>
 
 <section class="section">
@@ -36,25 +36,19 @@ gor_page_hero( array( 'eyebrow' => __( 'About Us', 'guruswad' ), 'title' => __( 
 	</div>
 </section>
 
-<section class="section">
+<!-- ORGANISATIONAL STRUCTURE — client letter §1.
+     Replaces "One company, seven connected businesses", which credited the
+     whole group's work to Guruswad Ocean Private Limited alone. These are four
+     separate organisations; the data and the order live in inc/organisation.php
+     so this page and the home page cannot drift apart. -->
+<section class="section" id="organisation">
 	<div class="container">
-		<div class="section-head"><span class="eyebrow" data-reveal><?php esc_html_e( 'Business activities', 'guruswad' ); ?></span><h2 class="h-lg" data-split><?php esc_html_e( 'One company, seven connected businesses.', 'guruswad' ); ?></h2></div>
-		<div class="cards-3">
-			<?php
-			$gor_acts = array(
-				array( 'leaf', __( 'Agriculture & Agri Products', 'guruswad' ) ),
-				array( 'grain', __( 'Millet & Food Processing', 'guruswad' ) ),
-				array( 'factory', __( 'Food Manufacturing', 'guruswad' ) ),
-				array( 'shop', __( 'Food Products & Trading', 'guruswad' ) ),
-				array( 'ship', __( 'Import & Export', 'guruswad' ) ),
-				array( 'globe', __( 'International Partnerships', 'guruswad' ) ),
-				array( 'chart', __( 'Investment & Collaboration', 'guruswad' ) ),
-			);
-			foreach ( $gor_acts as $a ) :
-				?>
-				<div class="card" data-reveal><span class="card__icon"><?php gor_the_icon( $a[0] ); ?></span><h3><?php echo esc_html( $a[1] ); ?></h3></div>
-			<?php endforeach; ?>
+		<div class="section-head">
+			<span class="eyebrow" data-reveal><?php esc_html_e( 'Our organisation', 'guruswad' ); ?></span>
+			<h2 class="h-lg" data-split><?php esc_html_e( 'Four organisations, one chain from field to shelf.', 'guruswad' ); ?></h2>
+			<p class="lead" data-reveal><?php esc_html_e( 'The work is held by separate bodies, each with its own mandate and its own accountability. Produce moves along the chain — and so does the value it earns.', 'guruswad' ); ?></p>
 		</div>
+		<?php gor_org_chain(); ?>
 	</div>
 </section>
 

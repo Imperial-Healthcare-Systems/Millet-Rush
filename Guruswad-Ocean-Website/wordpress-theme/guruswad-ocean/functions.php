@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'GOR_VERSION', '1.0.0' );
+define( 'GOR_VERSION', '1.1.0' );
 define( 'GOR_DIR', get_template_directory() );
 define( 'GOR_URI', get_template_directory_uri() );
 
@@ -17,6 +17,7 @@ require_once GOR_DIR . '/inc/customizer.php';
 require_once GOR_DIR . '/inc/template-tags.php';
 require_once GOR_DIR . '/inc/post-types.php';
 require_once GOR_DIR . '/inc/markets.php';
+require_once GOR_DIR . '/inc/organisation.php';
 
 if ( is_admin() ) {
 	require_once GOR_DIR . '/inc/admin.php';

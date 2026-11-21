@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 
 <footer class="site-footer" role="contentinfo">
 	<div class="site-footer__media" aria-hidden="true">
-		<video class="site-footer__video" data-lazy-video muted loop playsinline preload="none"
+		<video class="site-footer__video" data-lazy-video muted loop playsinline disablepictureinpicture disableremoteplayback preload="none"
 			poster="<?php echo esc_url( GOR_URI . '/assets/img/photo/footer-field.jpg' ); ?>">
 			<source data-src="<?php echo esc_url( GOR_URI . '/assets/video/footer-field.mp4' ); ?>" type="video/mp4">
 		</video>

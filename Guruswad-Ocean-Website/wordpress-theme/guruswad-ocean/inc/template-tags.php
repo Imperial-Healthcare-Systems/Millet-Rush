@@ -118,7 +118,13 @@ function gor_menu( $location, $fallback, $class = '' ) {
 /**
  * Inner page hero.
  *
- * @param array $a eyebrow, title, lead, crumbs (bool), art (bool).
+ * `variant` names a page-hero--* modifier, which is what carries the
+ * photograph behind the heading (main.css, section 33.6). Without it every
+ * inner page in the WordPress build rendered on the plain gradient while the
+ * static preview showed the picture — the templates simply had no way to say
+ * which photograph they wanted.
+ *
+ * @param array $a eyebrow, title, lead, art (bool), variant (string).
  */
 function gor_page_hero( $a = array() ) {
 	$a = wp_parse_args(
@@ -128,10 +134,15 @@ function gor_page_hero( $a = array() ) {
 			'title'   => get_the_title(),
 			'lead'    => has_excerpt() ? get_the_excerpt() : '',
 			'art'     => true,
+			'variant' => '',
 		)
 	);
+	$gor_hero_class = 'page-hero';
+	if ( $a['variant'] ) {
+		$gor_hero_class .= ' page-hero--' . sanitize_html_class( $a['variant'] );
+	}
 	?>
-	<section class="page-hero">
+	<section class="<?php echo esc_attr( $gor_hero_class ); ?>">
 		<?php if ( $a['art'] ) : ?><div class="page-hero__art" data-speed="-.15"><?php gor_millet_art(); ?></div><?php endif; ?>
 		<div class="container">
 			<div class="breadcrumbs" data-reveal="fade"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'guruswad' ); ?></a> &nbsp;/&nbsp; <?php echo esc_html( wp_strip_all_tags( $a['title'] ) ); ?></div>
@@ -151,8 +162,11 @@ function gor_page_hero( $a = array() ) {
  */
 function gor_demo_products() {
 	return array(
-		array( 'name' => __( 'Sorghum Puffs — Classic Salted', 'guruswad' ), 'sub' => __( 'Jowar · Puffed snack', 'guruswad' ), 'tag' => __( 'Bestseller', 'guruswad' ), 'color' => '#e39a22', 'light' => true ),
-		array( 'name' => __( 'Sorghum Puffs — Peri-Peri', 'guruswad' ), 'sub' => __( 'Jowar · Puffed snack', 'guruswad' ), 'tag' => __( 'New', 'guruswad' ), 'color' => '#631c0a', 'light' => false ),
+		// No 'Bestseller' or 'New' tag: client letter §5 asks that only what can
+		// be evidenced is shown, and a range that is not yet retailing has no
+		// bestseller.
+		array( 'name' => __( 'Sorghum Puffs — Classic Salted', 'guruswad' ), 'sub' => __( 'Jowar · Puffed snack', 'guruswad' ), 'tag' => '', 'color' => '#e39a22', 'light' => true ),
+		array( 'name' => __( 'Sorghum Puffs — Peri-Peri', 'guruswad' ), 'sub' => __( 'Jowar · Puffed snack', 'guruswad' ), 'tag' => '', 'color' => '#631c0a', 'light' => false ),
 		array( 'name' => __( 'Sorghum Puffs — Desi Masala', 'guruswad' ), 'sub' => __( 'Jowar · Puffed snack', 'guruswad' ), 'tag' => '', 'color' => '#689600', 'light' => false ),
 		array( 'name' => __( 'Pearl Millet Flour', 'guruswad' ), 'sub' => __( 'Bajra · Stone-ground', 'guruswad' ), 'tag' => '', 'color' => '#c68d4f', 'light' => true ),
 	);

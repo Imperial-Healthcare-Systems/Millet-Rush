@@ -8,7 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 get_header();
 the_post();
-gor_page_hero( array( 'eyebrow' => __( 'Contact Us', 'guruswad' ), 'title' => __( 'Let’s <em>talk</em>.', 'guruswad' ), 'lead' => __( 'Shopping, sourcing, exporting, investing or partnering — one place for every conversation.', 'guruswad' ) ) );
+gor_page_hero( array( 'eyebrow' => __( 'Contact Us', 'guruswad' ), 'title' => __( 'Let’s <em>talk</em>.', 'guruswad' ), 'lead' => __( 'Shopping, sourcing, exporting, investing or partnering — one place for every conversation.', 'guruswad' ) , 'variant' => 'contact') );
 ?>
 
 <section class="section">
