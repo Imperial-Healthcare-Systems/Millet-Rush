@@ -1,0 +1,1906 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Guruswad Ocean 1.0.0\n"
+"PO-Revision-Date: 2026-11-19\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: guruswad\n"
+
+#: 404.php:15
+msgid "This field is still"
+msgstr ""
+
+#: 404.php:15
+msgid "growing."
+msgstr ""
+
+#: 404.php:16
+msgid "The page you were looking for has moved or does not exist."
+msgstr ""
+
+#: 404.php:17
+msgid "Back home"
+msgstr ""
+
+#: 404.php:17 footer.php:44 front-page.php:38
+msgid "Shop MilletRush"
+msgstr ""
+
+#: archive-gor_brand.php:10 front-page.php:107 inc/template-tags.php:77
+msgid "Our Brands"
+msgstr ""
+
+#: archive-gor_brand.php:10
+msgid "A house of millet <em>brands</em>."
+msgstr ""
+
+#: archive-gor_brand.php:10
+msgid ""
+"Each brand carries the same promise — honest grain, crafted well — in its "
+"own voice."
+msgstr ""
+
+#: archive-gor_brand.php:22
+msgid "Explore"
+msgstr ""
+
+#: archive-gor_brand.php:29
+msgid "Enter the brand world"
+msgstr ""
+
+#: archive-gor_brand.php:36
+msgid "More brands are on the way."
+msgstr ""
+
+#: footer.php:16
+msgid "From Soil to Signature"
+msgstr ""
+
+#: footer.php:17
+msgid ""
+"A vertically integrated millet company connecting Maharashtra’s farmers to "
+"tables across the world — grown with care, processed with science, crafted "
+"into brands."
+msgstr ""
+
+#: footer.php:21 inc/enquiries.php:38 inc/enquiries.php:172
+msgid "Email"
+msgstr ""
+
+#: footer.php:22
+msgid "Your email for the Millet Journal"
+msgstr ""
+
+#: footer.php:23
+msgid "Join"
+msgstr ""
+
+#: footer.php:32 inc/enquiries.php:37 template-parts/rfq-form.php:53
+msgid "Company"
+msgstr ""
+
+#: footer.php:34 inc/post-types.php:154 page-templates/template-about.php:11
+msgid "About Us"
+msgstr ""
+
+#: footer.php:35 inc/template-tags.php:75
+msgid "Manufacturing"
+msgstr ""
+
+#: footer.php:36 front-page.php:148 inc/post-types.php:157
+msgid "Farmers & FPO Network"
+msgstr ""
+
+#: footer.php:37 inc/post-types.php:160 inc/template-tags.php:93
+msgid "News & Updates"
+msgstr ""
+
+#: footer.php:38 inc/post-types.php:159 inc/template-tags.php:94
+msgid "Contact Us"
+msgstr ""
+
+#: footer.php:42
+msgid "Business"
+msgstr ""
+
+#: footer.php:45 front-page.php:185 inc/post-types.php:156
+msgid "Import & Export"
+msgstr ""
+
+#: footer.php:46
+msgid "Request a Quote"
+msgstr ""
+
+#: footer.php:47
+msgid "Bulk Orders"
+msgstr ""
+
+#: footer.php:48 inc/post-types.php:158 inc/template-tags.php:92
+msgid "Investment & Partnership"
+msgstr ""
+
+#: footer.php:50
+msgid "Product catalogue"
+msgstr ""
+
+#: footer.php:53
+msgid "Reach us"
+msgstr ""
+
+#: footer.php:58
+msgid "WhatsApp Business"
+msgstr ""
+
+#: footer.php:65
+msgid "All rights reserved."
+msgstr ""
+
+#: footer.php:66
+msgid "Privacy Policy"
+msgstr ""
+
+#: footer.php:66
+msgid "Terms"
+msgstr ""
+
+#: footer.php:66
+msgid "Shipping & Returns"
+msgstr ""
+
+#: footer.php:67
+msgid "Crafted by"
+msgstr ""
+
+#: footer.php:71
+msgid "Chat on WhatsApp"
+msgstr ""
+
+#: footer.php:73
+msgid "Quick actions"
+msgstr ""
+
+#: footer.php:74 header.php:43
+msgid "Shop"
+msgstr ""
+
+#: footer.php:75 header.php:45 page-templates/template-export.php:20
+msgid "Enquire"
+msgstr ""
+
+#: footer.php:77 header.php:41
+msgid "Cart"
+msgstr ""
+
+#: front-page.php:15
+msgid "Introduction"
+msgstr ""
+
+#: front-page.php:29
+msgid "Guruswad Ocean · Est. in Maharashtra"
+msgstr ""
+
+#: front-page.php:31
+msgid "From Soil"
+msgstr ""
+
+#: front-page.php:32
+msgid "to"
+msgstr ""
+
+#: front-page.php:32
+msgid "Signature."
+msgstr ""
+
+#: front-page.php:36
+#, php-format
+msgid ""
+"Millets grown by %s farmers, processed with science and crafted for tables "
+"across the world."
+msgstr ""
+
+#: front-page.php:39
+msgid "Partner with us"
+msgstr ""
+
+#: front-page.php:43
+msgid "Farmers"
+msgstr ""
+
+#: front-page.php:44 page-templates/template-farmers.php:39
+msgid "Women SHGs"
+msgstr ""
+
+#: front-page.php:45
+msgid "IIMR collaboration"
+msgstr ""
+
+#: front-page.php:49
+msgid "Scroll"
+msgstr ""
+
+#: front-page.php:55
+msgid "Who we are"
+msgstr ""
+
+#: front-page.php:56
+msgid ""
+"We are an agri-food company built on an ancient grain. We work with farmers "
+"at the root, refine millets with research-backed processing, and carry them "
+"to the world as brands people trust."
+msgstr ""
+
+#: front-page.php:58
+msgid "Agriculture"
+msgstr ""
+
+#: front-page.php:58
+msgid ""
+"Direct sourcing through our Farmer Producer Company and farmer development "
+"programmes."
+msgstr ""
+
+#: front-page.php:59
+msgid "Food Processing"
+msgstr ""
+
+#: front-page.php:59
+msgid ""
+"Millet processing and manufacturing with technology from ICAR–IIMR "
+"collaboration."
+msgstr ""
+
+#: front-page.php:60
+msgid "Global Trade"
+msgstr ""
+
+#: front-page.php:60
+msgid ""
+"Export, import and private-label partnerships for buyers across markets."
+msgstr ""
+
+#: front-page.php:66
+msgid "The grain journey"
+msgstr ""
+
+#: front-page.php:68
+msgid "The Grain Journey"
+msgstr ""
+
+#: front-page.php:69
+msgid "Five steps from a field in Maharashtra to a table anywhere."
+msgstr ""
+
+#: front-page.php:75
+msgid "Field"
+msgstr ""
+
+#: front-page.php:75
+msgid ""
+"Climate-smart millets grown on rain-fed land — less water, more resilience."
+msgstr ""
+
+#: front-page.php:76
+msgid "Farmer"
+msgstr ""
+
+#: front-page.php:76
+msgid ""
+"Our FPO buys directly from member farmers, with fair prices and field "
+"support."
+msgstr ""
+
+#: front-page.php:77 page-templates/template-manufacturing.php:23
+msgid "Processing"
+msgstr ""
+
+#: front-page.php:77
+msgid ""
+"Cleaning, grading, de-hulling and puffing under strict quality control."
+msgstr ""
+
+#: front-page.php:78
+msgid "Product"
+msgstr ""
+
+#: front-page.php:78
+msgid "Crafted into MilletRush snacks, flours and ingredients people love."
+msgstr ""
+
+#: front-page.php:79
+msgid "World"
+msgstr ""
+
+#: front-page.php:79
+msgid "Packed for retail, bulk and export — ready for markets everywhere."
+msgstr ""
+
+#: front-page.php:108
+msgid "MilletRush — everyday goodness, beautifully made."
+msgstr ""
+
+#: front-page.php:109
+msgid ""
+"Our first brand turns sorghum and other millets into light, crunchy puffs "
+"and wholesome staples — the taste of tradition, made for modern life."
+msgstr ""
+
+#: front-page.php:111
+msgid "Sorghum (Jowar)"
+msgstr ""
+
+#: front-page.php:112
+msgid "Pearl Millet (Bajra)"
+msgstr ""
+
+#: front-page.php:113
+msgid "Millet Snacks"
+msgstr ""
+
+#: front-page.php:114
+msgid "Processed Foods"
+msgstr ""
+
+#: front-page.php:117
+msgid "Explore the brand"
+msgstr ""
+
+#: front-page.php:118 inc/template-tags.php:204
+msgid "Shop now"
+msgstr ""
+
+#: front-page.php:127
+msgid "Grown with care"
+msgstr ""
+
+#: front-page.php:127
+msgid "Processed with science"
+msgstr ""
+
+#: front-page.php:127
+msgid "Crafted into brands"
+msgstr ""
+
+#: front-page.php:127
+msgid "Shared at the root"
+msgstr ""
+
+#: front-page.php:127
+msgid "Ready for the world"
+msgstr ""
+
+#: front-page.php:137
+msgid "The Collection"
+msgstr ""
+
+#: front-page.php:137
+msgid "Crunch that remembers where it came from."
+msgstr ""
+
+#: front-page.php:138
+msgid "View all products"
+msgstr ""
+
+#: front-page.php:148
+msgid "Growth that is shared at the root."
+msgstr ""
+
+#: front-page.php:149
+msgid ""
+"Our Farmer Producer Company links smallholder farmers, women’s self-help "
+"groups and local entrepreneurs into one value chain — so the value of every "
+"grain returns to the village."
+msgstr ""
+
+#: front-page.php:152 page-templates/template-farmers.php:17
+msgid "Farmers in our network"
+msgstr ""
+
+#: front-page.php:153 inc/customizer.php:80
+#: page-templates/template-farmers.php:18
+msgid "Women Self-Help Groups"
+msgstr ""
+
+#: front-page.php:154 inc/customizer.php:81
+#: page-templates/template-farmers.php:19
+msgid "Small entrepreneurs"
+msgstr ""
+
+#: front-page.php:155 page-templates/template-farmers.php:20
+msgid "Farmer Producer Company"
+msgstr ""
+
+#: front-page.php:157
+msgid "Meet the network"
+msgstr ""
+
+#: front-page.php:164
+msgid "Processing unit — replace with facility photography"
+msgstr ""
+
+#: front-page.php:166 inc/post-types.php:155
+#: page-templates/template-manufacturing.php:11
+msgid "Manufacturing & Processing"
+msgstr ""
+
+#: front-page.php:167
+msgid "Tradition, refined by research."
+msgstr ""
+
+#: front-page.php:168
+msgid ""
+"From cleaning and grading to puffing and packing, every step is engineered "
+"for consistency, food safety and flavour."
+msgstr ""
+
+#: front-page.php:170
+msgid "Millet cleaning, grading & de-hulling"
+msgstr ""
+
+#: front-page.php:171
+msgid "Puffing and value-added product lines"
+msgstr ""
+
+#: front-page.php:172
+msgid "In-house quality control at every batch"
+msgstr ""
+
+#: front-page.php:173
+msgid "Product development for retail, bulk & export"
+msgstr ""
+
+#: front-page.php:175 page-templates/template-manufacturing.php:57
+msgid "Technology collaboration"
+msgstr ""
+
+#: front-page.php:175
+msgid "ICAR – Indian Institute of Millets Research, Hyderabad"
+msgstr ""
+
+#: front-page.php:176
+msgid "Inside our facility"
+msgstr ""
+
+#: front-page.php:185
+msgid "Built for borders, not just shelves."
+msgstr ""
+
+#: front-page.php:187
+msgid ""
+"Export-grade millets and millet products, private label and custom packaging"
+" — with documentation handled end to end."
+msgstr ""
+
+#: front-page.php:189
+msgid "Request a quote"
+msgstr ""
+
+#: front-page.php:190
+msgid "Catalogue"
+msgstr ""
+
+#: header.php:19
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:23 inc/post-types.php:161 inc/template-tags.php:89
+msgid "Home"
+msgstr ""
+
+#: header.php:28
+msgid "Agri · Food · Global Trade"
+msgstr ""
+
+#: header.php:32
+msgid "Primary"
+msgstr ""
+
+#: header.php:38 index.php:26
+msgid "Search"
+msgstr ""
+
+#: header.php:40
+msgid "My account"
+msgstr ""
+
+#: header.php:46
+msgid "Menu"
+msgstr ""
+
+#: header.php:53
+msgid "Full menu"
+msgstr ""
+
+#: header.php:56
+msgid ""
+"Millets grown by our farmer network, crafted for tables across the world."
+msgstr ""
+
+#: header.php:59 inc/woocommerce.php:94
+msgid "Export RFQ"
+msgstr ""
+
+#: inc/customizer.php:63
+msgid "Guruswad Ocean"
+msgstr ""
+
+#: inc/customizer.php:66
+msgid "Business details"
+msgstr ""
+
+#: inc/customizer.php:67
+msgid "Company name"
+msgstr ""
+
+#: inc/customizer.php:68
+msgid "Phone"
+msgstr ""
+
+#: inc/customizer.php:69
+msgid "WhatsApp number (digits with country code, e.g. 919800000000)"
+msgstr ""
+
+#: inc/customizer.php:70
+msgid "Public email"
+msgstr ""
+
+#: inc/customizer.php:71
+msgid "Address"
+msgstr ""
+
+#: inc/customizer.php:72
+msgid "Export catalogue PDF URL"
+msgstr ""
+
+#: inc/customizer.php:74
+msgid "Home hero"
+msgstr ""
+
+#: inc/customizer.php:75
+msgid "Hero background video (MP4 URL, optional)"
+msgstr ""
+
+#: inc/customizer.php:76
+msgid "Hero poster / image URL (optional)"
+msgstr ""
+
+#: inc/customizer.php:78
+msgid "Impact numbers"
+msgstr ""
+
+#: inc/customizer.php:79
+msgid "Farmers in network"
+msgstr ""
+
+#: inc/customizer.php:82
+msgid "Farmer Producer Companies"
+msgstr ""
+
+#: inc/customizer.php:84
+msgid "Enquiry routing (blank = site admin email)"
+msgstr ""
+
+#: inc/customizer.php:85
+msgid "General enquiries"
+msgstr ""
+
+#: inc/customizer.php:86
+msgid "Product enquiries"
+msgstr ""
+
+#: inc/customizer.php:87
+msgid "Export enquiries / RFQ"
+msgstr ""
+
+#: inc/customizer.php:88
+msgid "Bulk orders"
+msgstr ""
+
+#: inc/customizer.php:89 page-templates/template-export.php:20
+msgid "Import enquiries"
+msgstr ""
+
+#: inc/customizer.php:90
+msgid "Investor enquiries"
+msgstr ""
+
+#: inc/customizer.php:91
+msgid "Business partnerships"
+msgstr ""
+
+#: inc/customizer.php:93
+msgid "Social links"
+msgstr ""
+
+#: inc/enquiries.php:19
+msgid "General enquiry"
+msgstr ""
+
+#: inc/enquiries.php:20
+msgid "Product enquiry"
+msgstr ""
+
+#: inc/enquiries.php:21
+msgid "Export / Request for Quotation"
+msgstr ""
+
+#: inc/enquiries.php:22
+msgid "Bulk order (India)"
+msgstr ""
+
+#: inc/enquiries.php:23
+msgid "Import enquiry"
+msgstr ""
+
+#: inc/enquiries.php:24 template-parts/cta-band.php:17
+msgid "Investor enquiry"
+msgstr ""
+
+#: inc/enquiries.php:25 template-parts/cta-band.php:18
+msgid "Business partnership"
+msgstr ""
+
+#: inc/enquiries.php:36
+msgid "Name"
+msgstr ""
+
+#: inc/enquiries.php:39 template-parts/enquiry-form.php:53
+#: template-parts/rfq-form.php:55
+msgid "Phone / WhatsApp"
+msgstr ""
+
+#: inc/enquiries.php:40 inc/enquiries.php:173
+#: template-parts/enquiry-form.php:55
+msgid "Country"
+msgstr ""
+
+#: inc/enquiries.php:41 template-parts/enquiry-form.php:56
+msgid "City"
+msgstr ""
+
+#: inc/enquiries.php:42
+msgid "Product(s)"
+msgstr ""
+
+#: inc/enquiries.php:43
+msgid "Quantity"
+msgstr ""
+
+#: inc/enquiries.php:44 template-parts/rfq-form.php:41
+msgid "Packaging"
+msgstr ""
+
+#: inc/enquiries.php:45
+msgid "Incoterm"
+msgstr ""
+
+#: inc/enquiries.php:46 template-parts/enquiry-form.php:62
+#: template-parts/rfq-form.php:47
+msgid "Destination port"
+msgstr ""
+
+#: inc/enquiries.php:47 template-parts/rfq-form.php:42
+msgid "Timeline"
+msgstr ""
+
+#: inc/enquiries.php:48
+msgid "Investment range"
+msgstr ""
+
+#: inc/enquiries.php:49 template-parts/enquiry-form.php:65
+msgid "Organisation type"
+msgstr ""
+
+#: inc/enquiries.php:50 template-parts/enquiry-form.php:66
+msgid "Partnership model"
+msgstr ""
+
+#: inc/enquiries.php:51
+msgid "Message"
+msgstr ""
+
+#: inc/enquiries.php:52 inc/i18n.php:60
+msgid "Language"
+msgstr ""
+
+#: inc/enquiries.php:53
+msgid "Source page"
+msgstr ""
+
+#: inc/enquiries.php:54
+msgid "Campaign"
+msgstr ""
+
+#: inc/enquiries.php:65 inc/enquiries.php:65
+msgid "Enquiries"
+msgstr ""
+
+#: inc/enquiries.php:65 inc/enquiries.php:170
+msgid "Enquiry"
+msgstr ""
+
+#: inc/enquiries.php:76 inc/enquiries.php:171
+msgid "Type"
+msgstr ""
+
+#: inc/enquiries.php:150
+#, php-format
+msgid "Thank you for contacting %s"
+msgstr ""
+
+#: inc/enquiries.php:174 inc/enquiries.php:217
+msgid "Status"
+msgstr ""
+
+#: inc/enquiries.php:175
+msgid "Received"
+msgstr ""
+
+#: inc/enquiries.php:205
+msgid "Enquiry details"
+msgstr ""
+
+#: inc/enquiries.php:224
+msgid "Reply by email"
+msgstr ""
+
+#: inc/enquiries.php:226
+msgid "Open WhatsApp"
+msgstr ""
+
+#: inc/enquiries.php:253
+msgid "Download CSV"
+msgstr ""
+
+#: inc/enquiries.php:261
+msgid "Not allowed."
+msgstr ""
+
+#: inc/post-types.php:22
+msgid "Brands"
+msgstr ""
+
+#: inc/post-types.php:22
+msgid "Brand"
+msgstr ""
+
+#: inc/post-types.php:22
+msgid "Add new brand"
+msgstr ""
+
+#: inc/post-types.php:35
+msgid "Farmer Stories"
+msgstr ""
+
+#: inc/post-types.php:35
+msgid "Story"
+msgstr ""
+
+#: inc/post-types.php:35
+msgid "Add new story"
+msgstr ""
+
+#: inc/post-types.php:46 page-templates/template-about.php:67
+msgid "Leadership"
+msgstr ""
+
+#: inc/post-types.php:46
+msgid "Leader"
+msgstr ""
+
+#: inc/post-types.php:46
+msgid "Add leader"
+msgstr ""
+
+#: inc/post-types.php:58 page-templates/template-manufacturing.php:75
+msgid "Certifications"
+msgstr ""
+
+#: inc/post-types.php:58
+msgid "Certification"
+msgstr ""
+
+#: inc/post-types.php:71
+msgid "Export Markets"
+msgstr ""
+
+#: inc/post-types.php:71
+msgid "Market"
+msgstr ""
+
+#: inc/post-types.php:91
+msgid "Brand details"
+msgstr ""
+
+#: inc/post-types.php:92
+msgid "Role"
+msgstr ""
+
+#: inc/post-types.php:104
+msgid "Tagline"
+msgstr ""
+
+#: inc/post-types.php:105
+msgid "Accent colour (hex)"
+msgstr ""
+
+#: inc/post-types.php:106
+msgid "Logo URL (transparent PNG/SVG)"
+msgstr ""
+
+#: inc/post-types.php:107
+msgid "WooCommerce category slug for this brand"
+msgstr ""
+
+#: inc/post-types.php:121
+msgid "e.g. Managing Director"
+msgstr ""
+
+#: inc/post-types.php:186
+msgid ""
+"A millet-based food brand focused on sorghum puffs and other millet snacks —"
+" everyday goodness, crafted with care."
+msgstr ""
+
+#: inc/setup.php:27
+msgid "Primary (header)"
+msgstr ""
+
+#: inc/setup.php:28
+msgid "Full-screen menu"
+msgstr ""
+
+#: inc/setup.php:29
+msgid "Footer — Company"
+msgstr ""
+
+#: inc/setup.php:30
+msgid "Footer — Business"
+msgstr ""
+
+#: inc/setup.php:31
+msgid "Footer — Legal"
+msgstr ""
+
+#: inc/template-tags.php:61
+msgid "Hello Guruswad Ocean, I would like to know more about your products."
+msgstr ""
+
+#: inc/template-tags.php:73
+msgid "About"
+msgstr ""
+
+#: inc/template-tags.php:74
+msgid "Products"
+msgstr ""
+
+#: inc/template-tags.php:78
+msgid "Farmers & FPO"
+msgstr ""
+
+#: inc/template-tags.php:154
+msgid "Sorghum Puffs — Classic Salted"
+msgstr ""
+
+#: inc/template-tags.php:154 inc/template-tags.php:155
+#: inc/template-tags.php:156
+msgid "Jowar · Puffed snack"
+msgstr ""
+
+#: inc/template-tags.php:154
+msgid "Bestseller"
+msgstr ""
+
+#: inc/template-tags.php:155
+msgid "Sorghum Puffs — Peri-Peri"
+msgstr ""
+
+#: inc/template-tags.php:155
+msgid "New"
+msgstr ""
+
+#: inc/template-tags.php:156
+msgid "Sorghum Puffs — Desi Masala"
+msgstr ""
+
+#: inc/template-tags.php:157
+msgid "Pearl Millet Flour"
+msgstr ""
+
+#: inc/template-tags.php:157
+msgid "Bajra · Stone-ground"
+msgstr ""
+
+#: inc/template-tags.php:172
+msgid "Offer"
+msgstr ""
+
+#: inc/template-tags.php:172
+msgid "Signature"
+msgstr ""
+
+#: inc/template-tags.php:178 inc/template-tags.php:197
+msgid "View"
+msgstr ""
+
+#: inc/template-tags.php:183
+msgid "Quick add"
+msgstr ""
+
+#: inc/woocommerce.php:37
+msgid "Millet type"
+msgstr ""
+
+#: inc/woocommerce.php:37
+msgid "e.g. Sorghum (Jowar)"
+msgstr ""
+
+#: inc/woocommerce.php:38
+msgid "Sourcing region"
+msgstr ""
+
+#: inc/woocommerce.php:38
+msgid "e.g. FPO villages, Maharashtra"
+msgstr ""
+
+#: inc/woocommerce.php:39
+msgid "Pack sizes available"
+msgstr ""
+
+#: inc/woocommerce.php:39
+msgid "e.g. 70 g, 200 g, 1 kg, 10 kg bulk"
+msgstr ""
+
+#: inc/woocommerce.php:40
+msgid "Shelf life"
+msgstr ""
+
+#: inc/woocommerce.php:40
+msgid "e.g. 6 months"
+msgstr ""
+
+#: inc/woocommerce.php:41
+msgid "Storage"
+msgstr ""
+
+#: inc/woocommerce.php:41
+msgid "e.g. Store in a cool, dry place"
+msgstr ""
+
+#: inc/woocommerce.php:42
+msgid "HS code (export)"
+msgstr ""
+
+#: inc/woocommerce.php:43
+msgid "Export MOQ"
+msgstr ""
+
+#: inc/woocommerce.php:43
+msgid "e.g. 1 × 20ft container"
+msgstr ""
+
+#: inc/woocommerce.php:44 inc/woocommerce.php:146
+msgid "Ingredients"
+msgstr ""
+
+#: inc/woocommerce.php:45
+msgid "Nutrition (one per line: Energy | 410 kcal)"
+msgstr ""
+
+#: inc/woocommerce.php:46
+msgid "Export-ready product"
+msgstr ""
+
+#: inc/woocommerce.php:53
+msgid "Guruswad Ocean — product story & trade data"
+msgstr ""
+
+#: inc/woocommerce.php:93
+msgid "Bulk enquiry"
+msgstr ""
+
+#: inc/woocommerce.php:96
+#, php-format
+msgid "Hi, I am interested in %s"
+msgstr ""
+
+#: inc/woocommerce.php:96
+msgid "Ask on WhatsApp"
+msgstr ""
+
+#: inc/woocommerce.php:98
+msgid "Secure UPI, card & net-banking"
+msgstr ""
+
+#: inc/woocommerce.php:99
+msgid "GST invoice with every order"
+msgstr ""
+
+#: inc/woocommerce.php:100
+msgid "Tracked delivery across India"
+msgstr ""
+
+#: inc/woocommerce.php:119
+msgid "From the field"
+msgstr ""
+
+#: inc/woocommerce.php:120
+msgid "Every grain has a name, a field and a family."
+msgstr ""
+
+#: inc/woocommerce.php:121
+msgid "Sourced directly from our Farmer Producer Company network."
+msgstr ""
+
+#: inc/woocommerce.php:123
+msgid "Meet our farmers"
+msgstr ""
+
+#: inc/woocommerce.php:141
+msgid "Ingredients & Nutrition"
+msgstr ""
+
+#: inc/woocommerce.php:150
+msgid "Nutrition"
+msgstr ""
+
+#: inc/woocommerce.php:163
+msgid "Specifications & Packaging"
+msgstr ""
+
+#: inc/woocommerce.php:188
+msgid "incl. GST"
+msgstr ""
+
+#: inc/woocommerce.php:214 inc/woocommerce.php:215
+msgid "Your cart"
+msgstr ""
+
+#: inc/woocommerce.php:215
+msgid "Close cart"
+msgstr ""
+
+#: inc/woocommerce.php:227
+msgid "GSTIN (for business invoice, optional)"
+msgstr ""
+
+#: inc/woocommerce.php:240
+msgid "Please enter a valid 15-character GSTIN."
+msgstr ""
+
+#: index.php:13
+#, php-format
+msgid "Results for “%s”"
+msgstr ""
+
+#: index.php:17
+msgid "News & <em>Updates</em>"
+msgstr ""
+
+#: index.php:19
+msgid "The Millet Journal"
+msgstr ""
+
+#: index.php:19
+msgid "Company news, trade fairs, farmer stories and everything millets."
+msgstr ""
+
+#: index.php:25
+msgid "Search products, news, stories…"
+msgstr ""
+
+#: index.php:36 page-templates/template-farmers.php:57
+msgid "Read"
+msgstr ""
+
+#: index.php:47
+msgid "min read"
+msgstr ""
+
+#: index.php:55
+msgid "Nothing here yet. Please check back soon."
+msgstr ""
+
+#: page-templates/template-about.php:11
+msgid "An ancient grain. A modern <em>company</em>."
+msgstr ""
+
+#: page-templates/template-about.php:11
+msgid ""
+"Guruswad Ocean Private Limited works across agriculture, millet processing, "
+"food manufacturing and global trade — building a long-term platform for "
+"millets from Maharashtra."
+msgstr ""
+
+#: page-templates/template-about.php:17
+msgid "Founder’s note"
+msgstr ""
+
+#: page-templates/template-about.php:18
+msgid ""
+"“Millets fed our grandparents. We want them to nourish the world again — and"
+" to make sure the farmers who grow them share in that future.”"
+msgstr ""
+
+#: page-templates/template-about.php:18
+msgid "Founder & Managing Director"
+msgstr ""
+
+#: page-templates/template-about.php:25
+msgid ""
+"Use the page editor to add the company background, history and business "
+"activities. This text is a placeholder."
+msgstr ""
+
+#: page-templates/template-about.php:34
+msgid "Vision"
+msgstr ""
+
+#: page-templates/template-about.php:34
+msgid ""
+"To make millets a globally loved everyday food — grown sustainably, "
+"processed scientifically and shared fairly."
+msgstr ""
+
+#: page-templates/template-about.php:35
+msgid "Mission"
+msgstr ""
+
+#: page-templates/template-about.php:35
+msgid ""
+"To connect farmers, science and markets through trusted brands, world-class "
+"processing and transparent trade."
+msgstr ""
+
+#: page-templates/template-about.php:41
+msgid "Business activities"
+msgstr ""
+
+#: page-templates/template-about.php:41
+msgid "One company, seven connected businesses."
+msgstr ""
+
+#: page-templates/template-about.php:45
+msgid "Agriculture & Agri Products"
+msgstr ""
+
+#: page-templates/template-about.php:46
+msgid "Millet & Food Processing"
+msgstr ""
+
+#: page-templates/template-about.php:47
+msgid "Food Manufacturing"
+msgstr ""
+
+#: page-templates/template-about.php:48
+msgid "Food Products & Trading"
+msgstr ""
+
+#: page-templates/template-about.php:50
+msgid "International Partnerships"
+msgstr ""
+
+#: page-templates/template-about.php:51
+msgid "Investment & Collaboration"
+msgstr ""
+
+#: page-templates/template-about.php:67
+msgid "The people behind the grain."
+msgstr ""
+
+#: page-templates/template-about.php:83
+msgid "Expansion roadmap"
+msgstr ""
+
+#: page-templates/template-about.php:83
+msgid "Now. Next. Future."
+msgstr ""
+
+#: page-templates/template-about.php:85
+msgid "Now"
+msgstr ""
+
+#: page-templates/template-about.php:85
+msgid "Build the core"
+msgstr ""
+
+#: page-templates/template-about.php:85
+msgid "FPO sourcing, millet processing and the MilletRush brand in India."
+msgstr ""
+
+#: page-templates/template-about.php:86
+msgid "Next"
+msgstr ""
+
+#: page-templates/template-about.php:86
+msgid "Scale and export"
+msgstr ""
+
+#: page-templates/template-about.php:86
+msgid "New product lines, wider distribution and first export markets."
+msgstr ""
+
+#: page-templates/template-about.php:87
+msgid "Future"
+msgstr ""
+
+#: page-templates/template-about.php:87
+msgid "A global millet house"
+msgstr ""
+
+#: page-templates/template-about.php:87
+msgid "A portfolio of brands and partnerships across international markets."
+msgstr ""
+
+#: page-templates/template-contact.php:11
+msgid "Let’s <em>talk</em>."
+msgstr ""
+
+#: page-templates/template-contact.php:11
+msgid ""
+"Shopping, sourcing, exporting, investing or partnering — one place for every"
+" conversation."
+msgstr ""
+
+#: page-templates/template-contact.php:17
+msgid "Call"
+msgstr ""
+
+#: page-templates/template-contact.php:19
+msgid "Visit"
+msgstr ""
+
+#: page-templates/template-export.php:11
+msgid "Built for borders, not just <em>shelves</em>."
+msgstr ""
+
+#: page-templates/template-export.php:11
+msgid ""
+"Export-grade millets and millet products, private label and custom "
+"packaging, plus import sourcing — for buyers in every market."
+msgstr ""
+
+#: page-templates/template-export.php:17
+msgid "Export catalogue"
+msgstr ""
+
+#: page-templates/template-export.php:17
+msgid ""
+"Millet grains, flours, snacks and processed foods with full specifications."
+msgstr ""
+
+#: page-templates/template-export.php:18
+msgid "Download PDF"
+msgstr ""
+
+#: page-templates/template-export.php:18
+msgid "Browse products"
+msgstr ""
+
+#: page-templates/template-export.php:19
+msgid "Private label & packaging"
+msgstr ""
+
+#: page-templates/template-export.php:19
+msgid "Your brand, our millets — retail packs, bulk bags and custom formats."
+msgstr ""
+
+#: page-templates/template-export.php:19
+msgid "Discuss"
+msgstr ""
+
+#: page-templates/template-export.php:20
+msgid "Sourcing products and inputs into India through trusted partners."
+msgstr ""
+
+#: page-templates/template-export.php:27
+msgid "Markets"
+msgstr ""
+
+#: page-templates/template-export.php:27
+msgid "From Maharashtra to the world."
+msgstr ""
+
+#: page-templates/template-farmers.php:11
+msgid "Growth that is shared at the <em>root</em>."
+msgstr ""
+
+#: page-templates/template-farmers.php:11
+msgid ""
+"Our Farmer Producer Company connects smallholder farmers, women’s self-help "
+"groups and local entrepreneurs into one millet value chain."
+msgstr ""
+
+#: page-templates/template-farmers.php:27
+msgid "Farmer portrait — add with consent"
+msgstr ""
+
+#: page-templates/template-farmers.php:29
+msgid ""
+"“The grain from our fields now reaches the world.” — FPO member "
+"(placeholder)"
+msgstr ""
+
+#: page-templates/template-farmers.php:36
+msgid "What we do together"
+msgstr ""
+
+#: page-templates/template-farmers.php:36
+msgid "An ecosystem, not a supply chain."
+msgstr ""
+
+#: page-templates/template-farmers.php:38
+msgid "Direct sourcing"
+msgstr ""
+
+#: page-templates/template-farmers.php:38
+msgid "Fair, transparent procurement straight from member farmers."
+msgstr ""
+
+#: page-templates/template-farmers.php:39
+msgid "Self-help groups engaged in processing and value addition."
+msgstr ""
+
+#: page-templates/template-farmers.php:40
+msgid "Entrepreneurs"
+msgstr ""
+
+#: page-templates/template-farmers.php:40
+msgid "Small rural enterprises building millet businesses."
+msgstr ""
+
+#: page-templates/template-farmers.php:41
+msgid "Farmer development"
+msgstr ""
+
+#: page-templates/template-farmers.php:41
+msgid "Training, better seed and climate-smart practices."
+msgstr ""
+
+#: page-templates/template-farmers.php:42
+msgid "Value addition"
+msgstr ""
+
+#: page-templates/template-farmers.php:42
+msgid "Turning raw millets into higher-value products."
+msgstr ""
+
+#: page-templates/template-farmers.php:43
+msgid "Join the network"
+msgstr ""
+
+#: page-templates/template-farmers.php:43
+msgid "Farmers can call or WhatsApp us directly."
+msgstr ""
+
+#: page-templates/template-farmers.php:54
+msgid "Stories"
+msgstr ""
+
+#: page-templates/template-farmers.php:54
+msgid "Voices from the field."
+msgstr ""
+
+#: page-templates/template-investment.php:11
+msgid "The future grows in <em>millets</em>."
+msgstr ""
+
+#: page-templates/template-investment.php:11
+msgid ""
+"An integrated millet company with a farmer base, processing capability and "
+"its own brands — open to investors and strategic partners."
+msgstr ""
+
+#: page-templates/template-investment.php:16
+msgid "The opportunity"
+msgstr ""
+
+#: page-templates/template-investment.php:16
+msgid "Why millets. Why now. Why us."
+msgstr ""
+
+#: page-templates/template-investment.php:18
+msgid "A growing global category"
+msgstr ""
+
+#: page-templates/template-investment.php:18
+msgid ""
+"Independent research firms forecast steady growth in the global millet "
+"market as demand for healthy, climate-resilient grains rises."
+msgstr ""
+
+#: page-templates/template-investment.php:19
+msgid "Secure sourcing"
+msgstr ""
+
+#: page-templates/template-investment.php:19
+#, php-format
+msgid ""
+"A Farmer Producer Company with %s farmers gives traceable, reliable supply."
+msgstr ""
+
+#: page-templates/template-investment.php:20
+msgid "Science & brands"
+msgstr ""
+
+#: page-templates/template-investment.php:20
+msgid ""
+"ICAR-IIMR technology collaboration and a consumer brand, MilletRush, already"
+" in market."
+msgstr ""
+
+#: page-templates/template-investment.php:27
+msgid "Partnership models"
+msgstr ""
+
+#: page-templates/template-investment.php:27
+msgid "Ways to grow together."
+msgstr ""
+
+#: page-templates/template-investment.php:29
+#: template-parts/enquiry-form.php:66
+msgid "Distribution"
+msgstr ""
+
+#: page-templates/template-investment.php:29
+#: template-parts/enquiry-form.php:66
+msgid "Co-manufacturing"
+msgstr ""
+
+#: page-templates/template-investment.php:29
+#: template-parts/enquiry-form.php:66 template-parts/rfq-form.php:41
+msgid "Private label"
+msgstr ""
+
+#: page-templates/template-investment.php:29
+#: template-parts/enquiry-form.php:66
+msgid "Technology"
+msgstr ""
+
+#: page-templates/template-investment.php:29
+msgid "Export partnerships"
+msgstr ""
+
+#: page-templates/template-investment.php:29
+#: template-parts/enquiry-form.php:64
+msgid "Strategic investment"
+msgstr ""
+
+#: page-templates/template-manufacturing.php:11
+msgid "Tradition, refined by <em>research</em>."
+msgstr ""
+
+#: page-templates/template-manufacturing.php:11
+msgid ""
+"Millet processing infrastructure, product development and quality control — "
+"built for retail, bulk and export."
+msgstr ""
+
+#: page-templates/template-manufacturing.php:16
+msgid "The process"
+msgstr ""
+
+#: page-templates/template-manufacturing.php:16
+msgid "Six steps. Zero shortcuts."
+msgstr ""
+
+#: page-templates/template-manufacturing.php:20
+msgid "Cleaning"
+msgstr ""
+
+#: page-templates/template-manufacturing.php:20
+msgid "Removal of stones, dust and foreign matter."
+msgstr ""
+
+#: page-templates/template-manufacturing.php:21
+msgid "Grading"
+msgstr ""
+
+#: page-templates/template-manufacturing.php:21
+msgid "Sorting by size and quality for uniform processing."
+msgstr ""
+
+#: page-templates/template-manufacturing.php:22
+msgid "De-hulling"
+msgstr ""
+
+#: page-templates/template-manufacturing.php:22
+msgid "Removing the outer husk while keeping nutrition."
+msgstr ""
+
+#: page-templates/template-manufacturing.php:23
+msgid "Puffing, milling and value-added production."
+msgstr ""
+
+#: page-templates/template-manufacturing.php:24
+msgid "Quality control"
+msgstr ""
+
+#: page-templates/template-manufacturing.php:24
+msgid "Batch checks for safety, moisture and taste."
+msgstr ""
+
+#: page-templates/template-manufacturing.php:25
+msgid "Packing"
+msgstr ""
+
+#: page-templates/template-manufacturing.php:25
+msgid "Retail, bulk and export-grade packaging."
+msgstr ""
+
+#: page-templates/template-manufacturing.php:37
+msgid "Facility & machinery — add photos"
+msgstr ""
+
+#: page-templates/template-manufacturing.php:39
+msgid "Infrastructure"
+msgstr ""
+
+#: page-templates/template-manufacturing.php:40
+msgid "Built for consistency at scale."
+msgstr ""
+
+#: page-templates/template-manufacturing.php:46
+msgid ""
+"Add details of the processing unit, machinery and capacity in the page "
+"editor."
+msgstr ""
+
+#: page-templates/template-manufacturing.php:58
+msgid "Backed by ICAR – Indian Institute of Millets Research."
+msgstr ""
+
+#: page-templates/template-manufacturing.php:59
+msgid ""
+"ICAR-IIMR, Hyderabad, is India’s national centre for millet research. Our "
+"collaboration brings research-backed processing know-how to our products."
+msgstr ""
+
+#: page-templates/template-manufacturing.php:60
+msgid ""
+"Describe the exact scope of the collaboration as documented in the "
+"agreement."
+msgstr ""
+
+#: page-templates/template-manufacturing.php:63
+msgid "Product development"
+msgstr ""
+
+#: page-templates/template-manufacturing.php:63
+msgid "New millet formats, recipes and shelf-life studies."
+msgstr ""
+
+#: page-templates/template-manufacturing.php:64
+msgid "Quality & safety"
+msgstr ""
+
+#: page-templates/template-manufacturing.php:64
+msgid "Documented standards and testing at every batch."
+msgstr ""
+
+#: single-gor_brand.php:19
+msgid "A Guruswad Ocean brand"
+msgstr ""
+
+#: single-gor_brand.php:22
+msgid "Shop the range"
+msgstr ""
+
+#: single-gor_brand.php:22
+msgid "Bulk & trade"
+msgstr ""
+
+#: single-gor_brand.php:44
+msgid "The range"
+msgstr ""
+
+#: single-gor_brand.php:44
+msgid "Made to be reached for, every day."
+msgstr ""
+
+#: template-parts/cta-band.php:12
+msgid "Invest & Partner"
+msgstr ""
+
+#: template-parts/cta-band.php:13
+msgid "The future grows in millets."
+msgstr ""
+
+#: template-parts/cta-band.php:14
+msgid ""
+"We welcome investors, distributors, co-manufacturers and technology partners"
+" who share our ambition for a fast-growing global category."
+msgstr ""
+
+#: template-parts/cta-band.php:19
+msgid "Bulk order"
+msgstr ""
+
+#: template-parts/cta-band.php:20
+msgid "WhatsApp us"
+msgstr ""
+
+#: template-parts/enquiry-form.php:19
+msgid "Enquiry Hub"
+msgstr ""
+
+#: template-parts/enquiry-form.php:20
+msgid "How can we help?"
+msgstr ""
+
+#: template-parts/enquiry-form.php:21
+msgid ""
+"Choose what you need. Every enquiry reaches the right team and we reply "
+"within one working day."
+msgstr ""
+
+#: template-parts/enquiry-form.php:23
+msgid "Enquiry type"
+msgstr ""
+
+#: template-parts/enquiry-form.php:34
+msgid "Thank you — your enquiry has been received."
+msgstr ""
+
+#: template-parts/enquiry-form.php:34
+msgid "A confirmation has been sent to your email."
+msgstr ""
+
+#: template-parts/enquiry-form.php:36
+msgid ""
+"Please complete your name, a valid email and the consent box, then try "
+"again."
+msgstr ""
+
+#: template-parts/enquiry-form.php:50 template-parts/rfq-form.php:52
+msgid "Full name *"
+msgstr ""
+
+#: template-parts/enquiry-form.php:51
+msgid "Company / organisation"
+msgstr ""
+
+#: template-parts/enquiry-form.php:52 template-parts/rfq-form.php:54
+msgid "Email *"
+msgstr ""
+
+#: template-parts/enquiry-form.php:58
+msgid "Product(s) of interest"
+msgstr ""
+
+#: template-parts/enquiry-form.php:59
+msgid "Quantity (kg / tonnes / containers)"
+msgstr ""
+
+#: template-parts/enquiry-form.php:61 template-parts/enquiry-form.php:64
+#: template-parts/enquiry-form.php:65
+msgid "Select"
+msgstr ""
+
+#: template-parts/enquiry-form.php:61 template-parts/rfq-form.php:48
+msgid "Not sure"
+msgstr ""
+
+#: template-parts/enquiry-form.php:61 template-parts/rfq-form.php:48
+msgid "Preferred Incoterm"
+msgstr ""
+
+#: template-parts/enquiry-form.php:64
+msgid "Equity partnership"
+msgstr ""
+
+#: template-parts/enquiry-form.php:64
+msgid "Project / facility funding"
+msgstr ""
+
+#: template-parts/enquiry-form.php:64
+msgid "Other"
+msgstr ""
+
+#: template-parts/enquiry-form.php:64
+msgid "Area of interest"
+msgstr ""
+
+#: template-parts/enquiry-form.php:65
+msgid "Individual investor"
+msgstr ""
+
+#: template-parts/enquiry-form.php:65
+msgid "Fund / institution"
+msgstr ""
+
+#: template-parts/enquiry-form.php:65
+msgid "Corporate"
+msgstr ""
+
+#: template-parts/enquiry-form.php:65
+msgid "Distributor / retailer"
+msgstr ""
+
+#: template-parts/enquiry-form.php:65
+msgid "Government / NGO"
+msgstr ""
+
+#: template-parts/enquiry-form.php:66
+msgid "Retail / modern trade"
+msgstr ""
+
+#: template-parts/enquiry-form.php:66
+msgid "Export partnership"
+msgstr ""
+
+#: template-parts/enquiry-form.php:68
+msgid "Your message"
+msgstr ""
+
+#: template-parts/enquiry-form.php:70
+msgid ""
+"I agree that Guruswad Ocean may contact me about this enquiry and store my "
+"details as described in the privacy policy."
+msgstr ""
+
+#: template-parts/enquiry-form.php:72
+msgid "Send enquiry"
+msgstr ""
+
+#: template-parts/rfq-form.php:12
+msgid "Request for Quotation"
+msgstr ""
+
+#: template-parts/rfq-form.php:13
+msgid "Tell us what you need. We’ll quote within two working days."
+msgstr ""
+
+#: template-parts/rfq-form.php:15
+msgid "Export-grade millets and millet products"
+msgstr ""
+
+#: template-parts/rfq-form.php:16
+msgid "Retail packs, bulk bags or private label"
+msgstr ""
+
+#: template-parts/rfq-form.php:17
+msgid "Samples available on request"
+msgstr ""
+
+#: template-parts/rfq-form.php:18
+msgid "No online payment needed to enquire"
+msgstr ""
+
+#: template-parts/rfq-form.php:23
+msgid "Thank you — your RFQ has been received."
+msgstr ""
+
+#: template-parts/rfq-form.php:25
+msgid "Please complete the required fields and try again."
+msgstr ""
+
+#: template-parts/rfq-form.php:35
+msgid "1 · Product"
+msgstr ""
+
+#: template-parts/rfq-form.php:36
+msgid "Product(s) *"
+msgstr ""
+
+#: template-parts/rfq-form.php:36
+msgid "e.g. Sorghum puffs, pearl millet grain, millet flour"
+msgstr ""
+
+#: template-parts/rfq-form.php:39
+msgid "2 · Volume & packaging"
+msgstr ""
+
+#: template-parts/rfq-form.php:40
+msgid "Quantity *"
+msgstr ""
+
+#: template-parts/rfq-form.php:41
+msgid "Retail packs"
+msgstr ""
+
+#: template-parts/rfq-form.php:41
+msgid "Bulk bags"
+msgstr ""
+
+#: template-parts/rfq-form.php:41
+msgid "Custom"
+msgstr ""
+
+#: template-parts/rfq-form.php:42
+msgid "Immediately"
+msgstr ""
+
+#: template-parts/rfq-form.php:42
+msgid "1–3 months"
+msgstr ""
+
+#: template-parts/rfq-form.php:42
+msgid "3–6 months"
+msgstr ""
+
+#: template-parts/rfq-form.php:42
+msgid "Exploring"
+msgstr ""
+
+#: template-parts/rfq-form.php:45
+msgid "3 · Destination"
+msgstr ""
+
+#: template-parts/rfq-form.php:46
+msgid "Destination country *"
+msgstr ""
+
+#: template-parts/rfq-form.php:51
+msgid "4 · Your details"
+msgstr ""
+
+#: template-parts/rfq-form.php:56
+msgid "Specifications or notes"
+msgstr ""
+
+#: template-parts/rfq-form.php:57
+msgid "I agree to be contacted about this request."
+msgstr ""
+
+#: template-parts/rfq-form.php:61
+msgid "Back"
+msgstr ""
+
+#: template-parts/rfq-form.php:62
+msgid "Continue"
+msgstr ""
+
+#: template-parts/rfq-form.php:63
+msgid "Submit RFQ"
+msgstr ""
+
+#: template-parts/trade-map.php:11
+msgid "Routes from Maharashtra, India to export markets"
+msgstr ""
+
+#: template-parts/trade-map.php:14
+msgid "UAE"
+msgstr ""
+
+#: template-parts/trade-map.php:14
+msgid "Saudi Arabia"
+msgstr ""
+
+#: template-parts/trade-map.php:14
+msgid "United Kingdom"
+msgstr ""
+
+#: template-parts/trade-map.php:14
+msgid "Europe"
+msgstr ""
+
+#: template-parts/trade-map.php:14
+msgid "USA"
+msgstr ""
+
+#: template-parts/trade-map.php:14
+msgid "South-East Asia"
+msgstr ""
+
+#: template-parts/trade-map.php:14
+msgid "Australia"
+msgstr ""
+
+#: template-parts/trade-map.php:15
+msgid "Maharashtra, India"
+msgstr ""
+
+#: woocommerce.php:14
+msgid "MilletRush · The Collection"
+msgstr ""
+
+#: woocommerce.php:16
+msgid "Product categories"
+msgstr ""
+
+#: woocommerce.php:17
+msgid "All"
+msgstr ""

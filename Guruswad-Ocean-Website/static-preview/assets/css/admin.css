@@ -1,0 +1,197 @@
+/* ==========================================================================
+   Guruswad Ocean — admin screens
+   Loaded only on the theme's own two pages, never across wp-admin.
+
+   The brief is a premium corporate site, and the client lives in this panel
+   every day — so it carries the same palette, the same gold hairline grammar
+   and the same display serif as the website.
+
+   What it does NOT do is fight WordPress. Buttons, tables, notices and focus
+   rings stay recognisably native, because an editor who has learned wp-admin
+   should not have to learn this too. The luxury is in space, rule weight and
+   type, never in replacing controls people already know.
+   ========================================================================== */
+
+:root {
+	--gor-forest: #032b08;
+	--gor-forest-2: #0a3a10;
+	--gor-cream: #fcf9f5;
+	--gor-cream-2: #f4efe4;
+	--gor-surface: #fffdfa;
+	--gor-surface-2: #fbf7f0;
+	--gor-gold: #e39a22;
+	--gor-gold-soft: #f1c47a;
+	--gor-olive: #689600;
+	--gor-ink: #1f2a1f;
+	--gor-ink-soft: #4d574d;
+	--gor-rule: rgba(3, 43, 8, .12);
+	--gor-rule-2: rgba(3, 43, 8, .07);
+	--gor-ease: cubic-bezier(.625, .05, 0, 1);
+}
+
+/* WordPress paints #f0f0f1; the panel sits on the brand's cream instead. */
+body.gor-screen { background: var(--gor-cream); }
+.gor-admin { margin-right: 20px; max-width: 1240px; }
+.gor-admin * { box-sizing: border-box; }
+
+/* ---- Masthead ------------------------------------------------------------
+   One forest band carrying the title and the state of the site, so the first
+   thing the client sees is whether anything needs them.                     */
+.gor-masthead {
+	position: relative; overflow: hidden;
+	margin: 20px 0 clamp(1.75rem, 3.5vw, 2.75rem);
+	padding: clamp(1.75rem, 4vw, 2.85rem) clamp(1.5rem, 3.5vw, 2.85rem);
+	background:
+		radial-gradient(66% 120% at 90% 0%, rgba(227, 154, 34, .16), transparent 70%),
+		linear-gradient(170deg, var(--gor-forest-2) 0%, var(--gor-forest) 100%);
+	color: var(--gor-cream);
+	border-radius: 2px;
+}
+.gor-masthead::after {
+	content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+	background: linear-gradient(90deg, var(--gor-gold), rgba(227, 154, 34, 0) 58%);
+}
+.gor-masthead__eyebrow {
+	display: flex; align-items: center; gap: .9rem;
+	font-size: 10px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase;
+	color: var(--gor-gold-soft); margin-bottom: .85rem;
+}
+.gor-masthead__eyebrow::before { content: ""; width: 2.25rem; height: 1px; background: currentColor; opacity: .65; }
+.gor-masthead h1 {
+	font-family: "Fraunces", Georgia, serif;
+	font-weight: 300; font-size: clamp(1.9rem, 3.6vw, 2.9rem); line-height: 1.06;
+	letter-spacing: -.03em; color: var(--gor-cream); margin: 0 0 .6rem; padding: 0;
+	font-variation-settings: "opsz" 120, "SOFT" 30, "WONK" 1;
+}
+.gor-masthead p { margin: 0; max-width: 62ch; font-size: 13.5px; line-height: 1.7; color: rgba(252, 249, 245, .74); }
+.gor-masthead strong { color: var(--gor-gold-soft); font-weight: 600; }
+
+/* ---- Section headings ---------------------------------------------------- */
+.gor-admin h2 {
+	display: flex; align-items: center; gap: 1.25rem;
+	font-family: "Fraunces", Georgia, serif;
+	font-weight: 300; font-size: 1.4rem; letter-spacing: -.015em;
+	color: var(--gor-forest); margin: clamp(2.25rem, 4vw, 3.25rem) 0 1.1rem; padding: 0;
+}
+.gor-admin h2::after { content: ""; flex: 1; height: 1px; background: var(--gor-rule); }
+
+/* ---- Task cards ----------------------------------------------------------
+   Tiled edge to edge on a hairline grid — a ledger of what the site needs,
+   not a row of boxes. A gold rule draws in on approach, the same gesture the
+   website uses, so the two read as one product.                             */
+.gor-admin__grid {
+	display: grid; gap: 1px; margin: 0;
+	grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+	background: var(--gor-rule-2);
+	box-shadow: 0 0 0 1px var(--gor-rule-2);
+}
+.gor-card {
+	position: relative; display: flex; gap: 1rem; align-items: flex-start;
+	padding: 1.35rem 1.35rem 1.45rem;
+	background: var(--gor-surface);
+	text-decoration: none; color: inherit;
+	transition: background .35s var(--gor-ease);
+}
+.gor-card::before {
+	content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+	background: var(--gor-gold); transform: scaleX(0); transform-origin: left;
+	transition: transform .6s var(--gor-ease);
+}
+.gor-card:hover, .gor-card:focus-visible { background: var(--gor-surface-2); color: inherit; }
+.gor-card:hover::before, .gor-card:focus-visible::before { transform: scaleX(1); }
+.gor-card:focus { box-shadow: inset 0 0 0 2px var(--gor-gold); outline: none; }
+
+.gor-card__icon {
+	width: 20px; height: 20px; font-size: 20px; flex: none; margin-top: .15rem;
+	color: var(--gor-olive); transition: color .35s var(--gor-ease);
+}
+.gor-card:hover .gor-card__icon { color: var(--gor-gold); }
+.gor-card__body { display: block; min-width: 0; }
+.gor-card__body strong {
+	display: block; margin-bottom: .35rem;
+	font-family: "Fraunces", Georgia, serif; font-weight: 400;
+	font-size: 1.02rem; line-height: 1.25; letter-spacing: -.01em; color: var(--gor-forest);
+}
+.gor-card__body > span { display: block; font-size: 12.5px; line-height: 1.6; color: var(--gor-ink-soft); }
+
+.gor-card__count {
+	display: inline-block; margin-left: .5rem; vertical-align: 2px; font-style: normal;
+	font-size: 9.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+	background: var(--gor-gold); color: var(--gor-forest);
+	border-radius: 2px; padding: .18rem .5rem;
+}
+
+/* ---- Setup checklist -----------------------------------------------------
+   A progress rule rather than a percentage: the point is what is left, not
+   a score.                                                                  */
+.gor-progress { max-width: 860px; margin: 0 0 1.75rem; }
+.gor-progress__bar { height: 2px; background: var(--gor-rule); overflow: hidden; }
+.gor-progress__bar i {
+	display: block; height: 100%;
+	background: linear-gradient(90deg, var(--gor-olive), var(--gor-gold));
+	transition: width 1s var(--gor-ease);
+}
+.gor-progress__label {
+	display: flex; justify-content: space-between; gap: 1rem; margin-top: .75rem;
+	font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--gor-ink-soft);
+}
+.gor-progress__label b {
+	font-family: "Fraunces", Georgia, serif; font-weight: 400; font-size: 1.05rem;
+	letter-spacing: -.01em; color: var(--gor-forest);
+}
+
+/* ---- Checklist table ------------------------------------------------------ */
+.gor-admin__table {
+	max-width: 860px; margin-top: 4px; width: 100%;
+	border-collapse: collapse; background: var(--gor-surface);
+	box-shadow: 0 0 0 1px var(--gor-rule-2); border-radius: 2px; overflow: hidden;
+}
+.gor-admin__table td { padding: 1rem 1.15rem; vertical-align: middle; font-size: 13.5px; color: var(--gor-ink-soft); }
+.gor-admin__table tr + tr td { border-top: 1px solid var(--gor-rule-2); }
+.gor-admin__table tr { transition: background .25s var(--gor-ease); }
+.gor-admin__table tr:hover { background: var(--gor-surface-2); }
+.gor-admin__state { width: 46px; text-align: center; font-size: 15px; line-height: 1; }
+.gor-admin__state[data-done="1"] { color: var(--gor-olive); }
+.gor-admin__state[data-done="0"] { color: rgba(3, 43, 8, .24); }
+.gor-admin__table td:last-child { width: 78px; text-align: right; }
+.gor-admin__table a {
+	position: relative; display: inline-block; padding: .1rem 0;
+	color: var(--gor-forest); text-decoration: none;
+	font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+}
+.gor-admin__table a::after {
+	content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+	background: var(--gor-gold); transform: scaleX(0); transform-origin: left;
+	transition: transform .4s var(--gor-ease);
+}
+.gor-admin__table a:hover { color: var(--gor-olive); }
+.gor-admin__table a:hover::after { transform: scaleX(1); }
+/* A row still needing attention says so without relying on colour alone. */
+.gor-admin__table tr[data-done="0"] td:nth-child(2)::after {
+	content: " — still a placeholder";
+	color: var(--gor-ink-soft); font-size: 11.5px; font-style: italic; opacity: .8;
+}
+
+/* ---- Notes and native buttons --------------------------------------------- */
+.gor-admin .description {
+	max-width: 68ch; font-size: 12.5px; line-height: 1.7; color: var(--gor-ink-soft);
+}
+.gor-admin .button-primary {
+	background: var(--gor-forest); border-color: var(--gor-forest);
+	box-shadow: none; text-shadow: none;
+}
+.gor-admin .button-primary:hover, .gor-admin .button-primary:focus {
+	background: var(--gor-olive); border-color: var(--gor-olive);
+}
+
+@media (max-width: 782px) {
+	.gor-admin { margin-right: 10px; }
+	.gor-admin__grid { grid-template-columns: 1fr; }
+	.gor-admin__table td:last-child { width: 60px; }
+	.gor-admin__table tr[data-done="0"] td:nth-child(2)::after { content: ""; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.gor-card, .gor-card::before, .gor-progress__bar i,
+	.gor-admin__table tr, .gor-admin__table a::after { transition: none; }
+}

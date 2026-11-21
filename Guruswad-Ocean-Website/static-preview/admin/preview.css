@@ -1,0 +1,644 @@
+/* ==========================================================================
+   Guruswad Ocean — admin panel
+
+   The client lives in this panel every day, so it is built from the same
+   material as the website: the MilletRush palette, Fraunces for display,
+   Manrope for working text, hairline rules instead of boxes, and gold used
+   once per surface rather than everywhere.
+
+   What it does NOT do is become decorative at the cost of being usable. A
+   list of enquiries is a list of enquiries: dense, scannable, sortable. The
+   luxury is in the restraint — space, rule weight and type — not in colour.
+
+   assets/css/admin.css is the sibling of this file that ships to WordPress.
+   This one carries the shell that wp-admin would otherwise draw.
+   ========================================================================== */
+
+:root {
+  --forest: #032b08;
+  --forest-2: #0a3a10;
+  --forest-3: #12481a;
+  --cream: #fcf9f5;
+  --cream-2: #f4efe4;
+  --gold: #e39a22;
+  --gold-soft: #f1c47a;
+  --olive: #689600;
+  --leaf: #8db300;
+  --ink: #1f2a1f;
+  --ink-soft: #4d574d;
+  --surface: #fffdfa;
+  --surface-2: #fbf7f0;
+  --rule: rgba(3, 43, 8, .12);
+  --rule-2: rgba(3, 43, 8, .07);
+  --rule-light: rgba(252, 249, 245, .14);
+  --ease: cubic-bezier(.625, .05, 0, 1);
+  --shadow-sm: 0 2px 4px rgba(45, 30, 12, .05), 0 6px 14px -8px rgba(45, 30, 12, .12);
+  --shadow-md: 0 4px 10px -4px rgba(45, 30, 12, .1), 0 18px 34px -18px rgba(45, 30, 12, .22);
+  --shadow-lg: 0 8px 20px -8px rgba(45, 30, 12, .12), 0 40px 70px -34px rgba(45, 30, 12, .3);
+  --sidebar: 248px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--cream); color: var(--ink);
+  font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 14px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+::selection { background: var(--gold); color: var(--forest); }
+
+/* =========================================================================
+   1. SIGN-IN
+   A full-bleed forest field with the mark centred — the same first
+   impression the website gives, before any chrome.
+   ========================================================================= */
+.login-wrap {
+  min-height: 100vh; display: grid; place-items: center; padding: 2rem 1.25rem;
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(58% 64% at 80% 6%, rgba(227, 154, 34, .20), transparent 68%),
+    radial-gradient(44% 52% at 8% 96%, rgba(104, 150, 0, .16), transparent 70%),
+    linear-gradient(168deg, var(--forest-2) 0%, var(--forest) 58%, #021c06 100%);
+}
+/* A single gold hairline across the field, the site's recurring gesture. */
+.login-wrap::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold), rgba(227, 154, 34, 0) 62%);
+}
+
+.login {
+  position: relative; width: min(430px, 100%);
+  background: var(--cream); border-radius: 2px;
+  padding: clamp(2rem, 4.5vw, 3rem) clamp(1.75rem, 4vw, 2.75rem);
+  box-shadow: 0 50px 90px -45px rgba(0, 0, 0, .72);
+}
+.login::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold), rgba(227, 154, 34, 0) 70%);
+}
+.login__mark { display: block; width: 136px; margin: 0 auto 1.6rem; }
+.login__eyebrow {
+  display: flex; align-items: center; justify-content: center; gap: .85rem;
+  font-size: .6rem; font-weight: 700; letter-spacing: .34em; text-transform: uppercase;
+  color: var(--ink-soft); margin-bottom: .9rem;
+}
+.login__eyebrow::before, .login__eyebrow::after {
+  content: ""; width: 1.75rem; height: 1px; background: var(--gold); opacity: .65;
+}
+.login h1 {
+  font-family: "Fraunces", Georgia, serif; font-weight: 300;
+  font-size: clamp(1.7rem, 3.4vw, 2.1rem); line-height: 1.1;
+  color: var(--forest); margin: 0 0 .45rem; text-align: center; letter-spacing: -.025em;
+  font-variation-settings: "opsz" 120, "SOFT" 30, "WONK" 1;
+}
+.login p.sub {
+  text-align: center; font-size: .78rem; color: var(--ink-soft);
+  margin: 0 0 2rem; letter-spacing: .02em;
+}
+
+.login .field { margin-bottom: 1.25rem; }
+.login label {
+  display: block; font-size: .6rem; font-weight: 700; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--ink-soft); margin: 0 0 .5rem;
+}
+.login input {
+  width: 100%; padding: .85rem 0; font: inherit; font-size: .95rem; color: var(--forest);
+  background: none; border: 0; border-radius: 0;
+  box-shadow: inset 0 -1px 0 0 var(--rule);
+  transition: box-shadow .35s var(--ease);
+}
+.login input:hover { box-shadow: inset 0 -1px 0 0 rgba(3, 43, 8, .3); }
+.login input:focus { outline: none; box-shadow: inset 0 -2px 0 0 var(--gold); }
+
+.login button[type=submit] {
+  position: relative; width: 100%; padding: 1rem; margin-top: 1.5rem;
+  border: 0; border-radius: 2px; cursor: pointer; overflow: hidden;
+  background: var(--forest); color: var(--cream); font: inherit;
+  font-size: .68rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase;
+  transition: background .4s var(--ease);
+}
+.login button[type=submit]:hover { background: var(--olive); }
+.login button[type=submit]:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+.login .err {
+  display: none; margin: 0 0 1.25rem; padding: .8rem 1rem;
+  background: rgba(197, 48, 48, .07); color: #8f2b23; font-size: .8rem; line-height: 1.5;
+  border-left: 2px solid #c53030;
+}
+.login .err.on { display: block; }
+.login .demo {
+  margin: 2rem 0 0; padding-top: 1.35rem; border-top: 1px solid var(--rule);
+  font-size: .72rem; line-height: 1.7; color: var(--ink-soft);
+}
+.login .demo b { color: var(--forest); font-weight: 600; }
+.login .demo a { color: var(--forest); text-decoration: underline; text-underline-offset: 2px; }
+
+/* =========================================================================
+   2. SHELL
+   ========================================================================= */
+.panel { display: none; }
+body.in .login-wrap { display: none; }
+body.in .panel { display: block; }
+
+/* ---- 2.1 Top bar --------------------------------------------------------- */
+.bar {
+  position: sticky; top: 0; z-index: 30;
+  display: flex; align-items: center; gap: 1.25rem;
+  padding: .85rem clamp(1.25rem, 3vw, 2.25rem);
+  background: var(--forest); color: var(--cream);
+  font-size: .72rem; letter-spacing: .08em;
+  box-shadow: 0 1px 0 rgba(252, 249, 245, .1);
+}
+.bar b {
+  font-family: "Fraunces", Georgia, serif; font-weight: 400;
+  font-size: .95rem; letter-spacing: -.01em;
+}
+.bar .sep { width: 1px; height: 1rem; background: var(--rule-light); }
+.bar .right { margin-left: auto; display: flex; align-items: center; gap: 1.1rem; }
+.bar .muted { color: rgba(252, 249, 245, .55); }
+.bar button {
+  position: relative; border: 0; background: none; cursor: pointer;
+  color: var(--gold-soft); font: inherit; font-size: .68rem;
+  letter-spacing: .16em; text-transform: uppercase; padding: .2rem 0;
+}
+.bar button::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+  background: currentColor; transform: scaleX(0); transform-origin: left;
+  transition: transform .45s var(--ease);
+}
+.bar button:hover::after { transform: scaleX(1); }
+
+/* ---- 2.2 Notice ---------------------------------------------------------- */
+.note {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1.1rem;
+  padding: .7rem clamp(1.25rem, 3vw, 2.25rem);
+  background: var(--forest-2); color: var(--gold-soft);
+  font-size: .72rem; line-height: 1.6;
+}
+.note strong { color: var(--cream); font-weight: 600; }
+.note span { color: rgba(252, 249, 245, .72); }
+.note a { color: var(--cream); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ---- 2.3 Sidebar --------------------------------------------------------- */
+.shell { display: grid; grid-template-columns: var(--sidebar) minmax(0, 1fr); align-items: start; }
+.side {
+  position: sticky; top: 0; align-self: stretch;
+  min-height: calc(100vh - 2.6rem); padding: 1.75rem 0 2rem;
+  background: var(--forest); color: var(--cream);
+}
+.side__label {
+  display: flex; align-items: center; gap: .75rem;
+  padding: 0 clamp(1rem, 2vw, 1.5rem) .85rem;
+  font-size: .58rem; font-weight: 700; letter-spacing: .26em; text-transform: uppercase;
+  color: rgba(252, 249, 245, .4);
+}
+.side__label::after { content: ""; flex: 1; height: 1px; background: var(--rule-light); }
+.side a {
+  position: relative; display: flex; align-items: center; gap: .8rem;
+  padding: .72rem clamp(1rem, 2vw, 1.5rem);
+  color: rgba(252, 249, 245, .72); text-decoration: none;
+  font-size: .82rem; letter-spacing: .01em;
+  transition: color .3s var(--ease), background .3s var(--ease);
+}
+.side a::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+  background: var(--gold); transform: scaleY(0); transform-origin: top;
+  transition: transform .4s var(--ease);
+}
+.side a:hover { color: var(--cream); background: rgba(252, 249, 245, .04); }
+.side a.on { color: var(--cream); background: rgba(252, 249, 245, .06); font-weight: 600; }
+.side a.on::before, .side a:hover::before { transform: scaleY(1); }
+.side a:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+.side svg { width: 17px; height: 17px; flex: none; opacity: .85; }
+.side a.on svg { opacity: 1; color: var(--gold-soft); }
+.side .grp { margin-top: 1.5rem; padding-top: 1.1rem; border-top: 1px solid var(--rule-light); }
+.side .bub {
+  margin-left: auto; min-width: 1.25rem; height: 1.25rem; padding: 0 .35rem;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--gold); color: var(--forest); border-radius: 100px;
+  font-size: .62rem; font-weight: 700; letter-spacing: 0;
+}
+.side .bub[hidden] { display: none; }
+
+.body { padding: 0 clamp(1.25rem, 3vw, 2.5rem) 5rem; min-width: 0; }
+#screen:focus { outline: none; }
+
+/* =========================================================================
+   3. MASTHEAD AND HEADINGS
+   ========================================================================= */
+.gor-admin { max-width: 1240px; }
+.gor-crumb {
+  display: flex; align-items: center; gap: .55rem;
+  margin: 1.75rem 0 0; font-size: .62rem; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.gor-crumb a { color: var(--ink-soft); text-decoration: none; transition: color .3s var(--ease); }
+.gor-crumb a:hover { color: var(--olive); }
+.gor-crumb span { opacity: .4; }
+
+.gor-masthead {
+  position: relative; overflow: hidden;
+  margin: 1.5rem 0 clamp(1.75rem, 3.5vw, 2.75rem);
+  padding: clamp(1.75rem, 4vw, 2.85rem) clamp(1.5rem, 3.5vw, 2.85rem);
+  background:
+    radial-gradient(66% 120% at 90% 0%, rgba(227, 154, 34, .16), transparent 70%),
+    linear-gradient(170deg, var(--forest-2) 0%, var(--forest) 100%);
+  color: var(--cream); border-radius: 2px;
+}
+.gor-masthead::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold), rgba(227, 154, 34, 0) 58%);
+}
+.gor-masthead__eyebrow {
+  display: flex; align-items: center; gap: .9rem;
+  font-size: .58rem; font-weight: 700; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--gold-soft); margin-bottom: .85rem;
+}
+.gor-masthead__eyebrow::before { content: ""; width: 2.25rem; height: 1px; background: currentColor; opacity: .65; }
+.gor-masthead h1 {
+  font-family: "Fraunces", Georgia, serif; font-weight: 300;
+  font-size: clamp(1.9rem, 3.6vw, 2.9rem); line-height: 1.06;
+  letter-spacing: -.03em; color: var(--cream); margin: 0 0 .6rem;
+  font-variation-settings: "opsz" 120, "SOFT" 30, "WONK" 1;
+}
+.gor-masthead p {
+  margin: 0; max-width: 62ch; font-size: .85rem; line-height: 1.7;
+  color: rgba(252, 249, 245, .74);
+}
+.gor-masthead strong { color: var(--gold-soft); font-weight: 600; }
+
+.gor-admin h2 {
+  display: flex; align-items: center; gap: 1.25rem;
+  font-family: "Fraunces", Georgia, serif; font-weight: 300;
+  font-size: 1.4rem; letter-spacing: -.015em; color: var(--forest);
+  margin: clamp(2.25rem, 4vw, 3.25rem) 0 1.1rem;
+}
+.gor-admin h2::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+
+/* =========================================================================
+   4. TASK CARDS
+   ========================================================================= */
+.gor-admin__grid {
+  display: grid; gap: 1px; margin: 0;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  background: var(--rule-2);
+  box-shadow: 0 0 0 1px var(--rule-2);
+}
+/* Cards tile edge to edge on a hairline grid — a ledger, not a row of boxes. */
+.gor-card {
+  position: relative; display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1.35rem 1.35rem 1.45rem;
+  background: var(--surface); text-decoration: none; color: inherit;
+  transition: background .35s var(--ease);
+}
+.gor-card::before {
+  content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+  background: var(--gold); transform: scaleX(0); transform-origin: left;
+  transition: transform .6s var(--ease);
+}
+.gor-card:hover { background: var(--surface-2); }
+.gor-card:hover::before, .gor-card:focus-visible::before { transform: scaleX(1); }
+.gor-card:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+.gor-card__icon { width: 20px; height: 20px; flex: none; margin-top: .15rem; color: var(--olive); transition: color .35s var(--ease); }
+.gor-card:hover .gor-card__icon { color: var(--gold); }
+.gor-card__body { display: block; min-width: 0; }
+.gor-card__body strong {
+  display: block; margin-bottom: .35rem;
+  font-family: "Fraunces", Georgia, serif; font-weight: 400;
+  font-size: 1.02rem; line-height: 1.25; letter-spacing: -.01em; color: var(--forest);
+}
+.gor-card__body > span { display: block; font-size: .78rem; line-height: 1.6; color: var(--ink-soft); }
+.gor-card__count {
+  display: inline-block; margin-left: .5rem; vertical-align: 2px;
+  font-family: "Manrope", system-ui, sans-serif; font-style: normal;
+  font-size: .58rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  background: var(--gold); color: var(--forest); padding: .18rem .5rem; border-radius: 2px;
+}
+.gor-card__count[hidden] { display: none; }
+
+/* =========================================================================
+   5. TOOLS ROW
+   ========================================================================= */
+.gor-tools {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.1rem;
+  margin: 0 0 1.25rem;
+}
+.gor-tools__count {
+  margin-left: auto; font-size: .62rem; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.gor-btn {
+  position: relative; padding: .68rem 1.4rem; border: 0; border-radius: 2px; cursor: pointer;
+  background: none; color: var(--forest); font: inherit;
+  font-size: .64rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+  box-shadow: inset 0 0 0 1px var(--rule);
+  transition: color .3s var(--ease), box-shadow .3s var(--ease), background .3s var(--ease);
+}
+.gor-btn:hover { box-shadow: inset 0 0 0 1px rgba(3, 43, 8, .34); background: var(--surface-2); }
+.gor-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.gor-btn--primary { background: var(--forest); color: var(--cream); box-shadow: none; }
+.gor-btn--primary:hover { background: var(--olive); color: var(--cream); box-shadow: none; }
+a.gor-btn { display: inline-block; text-decoration: none; }
+
+.gor-search {
+  flex: 0 1 240px; padding: .68rem 0; font: inherit; font-size: .85rem; color: var(--forest);
+  background: none; border: 0; border-radius: 0;
+  box-shadow: inset 0 -1px 0 0 var(--rule);
+  transition: box-shadow .35s var(--ease);
+}
+.gor-search::placeholder { color: var(--ink-soft); opacity: .7; }
+.gor-search:hover { box-shadow: inset 0 -1px 0 0 rgba(3, 43, 8, .3); }
+.gor-search:focus { outline: none; box-shadow: inset 0 -2px 0 0 var(--gold); }
+
+.gor-chips { display: flex; flex-wrap: wrap; gap: 0 1.6rem; margin: 0 0 1.5rem; }
+.gor-chips button {
+  position: relative; padding: .4rem 0; border: 0; background: none; cursor: pointer;
+  font: inherit; font-size: .62rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--ink-soft); transition: color .3s var(--ease);
+}
+.gor-chips button::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+  background: var(--gold); transform: scaleX(0); transform-origin: left;
+  transition: transform .5s var(--ease);
+}
+.gor-chips button:hover { color: var(--forest); }
+.gor-chips button.is-active { color: var(--forest); }
+.gor-chips button.is-active::after, .gor-chips button:hover::after { transform: scaleX(1); }
+.gor-chips button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+/* =========================================================================
+   6. LIST TABLE
+   Rules, not boxes. The row is the unit; the hairline is the container.
+   ========================================================================= */
+.gor-t__wrap { overflow-x: auto; background: var(--surface); box-shadow: 0 0 0 1px var(--rule-2); border-radius: 2px; }
+.gor-t { width: 100%; border-collapse: collapse; min-width: 680px; }
+.gor-t thead th {
+  padding: .9rem 1.15rem; text-align: left; white-space: nowrap;
+  font-size: .58rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--ink-soft); background: var(--surface-2);
+  border-bottom: 1px solid var(--rule);
+}
+.gor-t td {
+  padding: 1rem 1.15rem; text-align: left; vertical-align: top;
+  font-size: .85rem; line-height: 1.55; color: var(--ink-soft);
+  border-bottom: 1px solid var(--rule-2);
+}
+.gor-t tbody tr { transition: background .25s var(--ease); }
+.gor-t tbody tr:last-child td { border-bottom: 0; }
+.gor-t tbody tr:hover { background: var(--surface-2); }
+.gor-t__title {
+  border: 0; background: none; padding: 0; cursor: pointer; text-align: left;
+  font-family: "Fraunces", Georgia, serif; font-weight: 400;
+  font-size: .98rem; letter-spacing: -.005em; color: var(--forest);
+  transition: color .3s var(--ease);
+}
+.gor-t__title:hover { color: var(--olive); }
+.gor-t__title:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.gor-t__act { white-space: nowrap; text-align: right; }
+.gor-t__act .gor-link + .gor-link { margin-left: .9rem; }
+.gor-t__empty {
+  text-align: center; padding: 3.5rem 1rem; color: var(--ink-soft);
+  font-family: "Fraunces", Georgia, serif; font-size: 1rem; font-style: italic;
+}
+.gor-link {
+  position: relative; border: 0; background: none; padding: .1rem 0; cursor: pointer;
+  font: inherit; font-size: .62rem; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--forest);
+}
+.gor-link::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+  background: var(--gold); transform: scaleX(0); transform-origin: left;
+  transition: transform .4s var(--ease);
+}
+.gor-link:hover::after { transform: scaleX(1); }
+.gor-link--del { color: #9a2b23; }
+.gor-link--del::after { background: #c53030; }
+.gor-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+.gor-badge {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-size: .6rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.gor-badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.gor-badge.is-good { color: var(--olive); }
+.gor-badge.is-warn { color: #b57414; }
+.gor-badge.is-bad { color: #9a2b23; }
+.gor-badge.is-mute { color: var(--ink-soft); opacity: .7; }
+
+/* =========================================================================
+   7. FORMS
+   ========================================================================= */
+.gor-form {
+  background: var(--surface); border-radius: 2px; max-width: 820px;
+  padding: clamp(1.4rem, 3vw, 2.25rem);
+  box-shadow: 0 0 0 1px var(--rule-2), var(--shadow-sm);
+}
+.gor-form--wide { max-width: 700px; }
+.gor-form h3 {
+  margin: 0 0 1.6rem; padding-bottom: 1rem; border-bottom: 1px solid var(--rule);
+  font-family: "Fraunces", Georgia, serif; font-weight: 300;
+  font-size: 1.45rem; color: var(--forest); letter-spacing: -.02em;
+}
+.gor-form__grid { display: grid; gap: 1.25rem 1.5rem; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.gor-f { display: flex; flex-direction: column; min-width: 0; }
+.gor-f:has(textarea) { grid-column: 1 / -1; }
+.gor-f label {
+  font-size: .58rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--ink-soft); margin-bottom: .55rem;
+}
+.gor-f input, .gor-f select, .gor-f textarea {
+  width: 100%; padding: .7rem 0; font: inherit; font-size: .9rem; color: var(--forest);
+  background: none; border: 0; border-radius: 0;
+  box-shadow: inset 0 -1px 0 0 var(--rule);
+  transition: box-shadow .35s var(--ease);
+}
+.gor-f select {
+  cursor: pointer; padding-right: 1.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23032b08' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right center; background-size: 13px;
+  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+}
+.gor-f textarea { resize: vertical; min-height: 6rem; line-height: 1.65; }
+.gor-f input:hover, .gor-f select:hover, .gor-f textarea:hover { box-shadow: inset 0 -1px 0 0 rgba(3, 43, 8, .3); }
+.gor-f input:focus, .gor-f select:focus, .gor-f textarea:focus { outline: none; box-shadow: inset 0 -2px 0 0 var(--gold); }
+
+.gor-form__actions {
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  margin-top: 1.9rem; padding-top: 1.5rem; border-top: 1px solid var(--rule);
+}
+.gor-saved {
+  display: inline-flex; align-items: center; gap: .45rem;
+  font-size: .62rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--olive);
+}
+.gor-saved::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.gor-saved[hidden] { display: none; }
+
+.gor-hint {
+  margin: 0 0 1.25rem; padding: .85rem 1.1rem;
+  background: var(--surface-2); border-left: 2px solid var(--gold);
+  font-size: .78rem; line-height: 1.65; color: var(--ink-soft); max-width: 62ch;
+}
+.gor-hint[hidden] { display: none; }
+.gor-admin .description {
+  max-width: 68ch; font-size: .78rem; line-height: 1.7; color: var(--ink-soft);
+}
+
+/* =========================================================================
+   8. MEDIA LIBRARY
+   ========================================================================= */
+.gor-media { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(146px, 1fr)); }
+.gor-media__item {
+  margin: 0; background: var(--surface); border-radius: 2px; overflow: hidden;
+  box-shadow: 0 0 0 1px var(--rule-2);
+  transition: box-shadow .35s var(--ease), transform .35s var(--ease);
+}
+.gor-media__item:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px var(--rule), var(--shadow-md); }
+.gor-media__item img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+.gor-media__item figcaption {
+  padding: .6rem .7rem .7rem; font-size: .62rem; line-height: 1.45;
+  color: var(--ink-soft); word-break: break-all;
+}
+
+/* ---- 8.1 Placement table ---------------------------------------------- */
+.gor-t--slots code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .78rem; color: var(--forest);
+  background: var(--surface-2); padding: .15rem .45rem; border-radius: 2px;
+  word-break: break-all;
+}
+.gor-needs {
+  display: block; font-weight: 600; font-size: .78rem; line-height: 1.5;
+  color: var(--forest);
+}
+
+/* ---- 8.2 Library tiles -------------------------------------------------- */
+.gor-media__item figcaption b {
+  display: block; font-weight: 600; font-size: .66rem; color: var(--forest);
+  word-break: break-all; margin-bottom: .25rem;
+}
+.gor-media__use {
+  display: block; font-size: .62rem; line-height: 1.45; color: var(--olive);
+}
+.gor-media__use.is-spare { color: var(--ink-soft); font-style: italic; opacity: .8; }
+.gor-media__dim {
+  display: block; margin-top: .2rem; font-size: .58rem;
+  letter-spacing: .1em; color: var(--ink-soft); opacity: .75;
+}
+.gor-media__item.is-video { position: relative; }
+.gor-media__item.is-video::before {
+  content: "FILM"; position: absolute; top: .5rem; left: .5rem; z-index: 2;
+  padding: .2rem .45rem; border-radius: 2px;
+  background: var(--forest); color: var(--gold-soft);
+  font-size: .54rem; font-weight: 700; letter-spacing: .18em;
+}
+.gor-admin .gor-media + h2 { margin-top: 2.5rem; }
+
+/* =========================================================================
+   9. PROGRESS (setup checklist)
+   ========================================================================= */
+.gor-progress { max-width: 860px; margin: 0 0 1.75rem; }
+.gor-progress__bar { height: 2px; background: var(--rule); overflow: hidden; }
+.gor-progress__bar i {
+  display: block; height: 100%;
+  background: linear-gradient(90deg, var(--olive), var(--gold));
+  transition: width 1s var(--ease);
+}
+.gor-progress__label {
+  display: flex; justify-content: space-between; gap: 1rem; margin-top: .75rem;
+  font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft);
+}
+.gor-progress__label b {
+  font-family: "Fraunces", Georgia, serif; font-weight: 400; font-size: 1.05rem;
+  letter-spacing: -.01em; color: var(--forest);
+}
+
+/* =========================================================================
+   10. NARROW SCREENS
+   ========================================================================= */
+@media (max-width: 1024px) {
+  :root { --sidebar: 210px; }
+}
+@media (max-width: 860px) {
+  .shell { grid-template-columns: 1fr; }
+  .side {
+    position: static; min-height: 0; padding: 0;
+    display: flex; overflow-x: auto; scrollbar-width: none;
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .side::-webkit-scrollbar { display: none; }
+  .side__label { display: none; }
+  .side .grp { display: contents; }
+  .side a { white-space: nowrap; padding: .9rem 1rem; }
+  .side a::before { top: auto; bottom: 0; left: 0; right: 0; width: auto; height: 2px;
+    transform: scaleX(0); transform-origin: left; }
+  .side a.on::before, .side a:hover::before { transform: scaleX(1); }
+  .gor-admin__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .bar .muted { display: none; }
+  .gor-tools__count { margin-left: 0; width: 100%; }
+  .gor-search { flex: 1 1 100%; }
+  .gor-form__grid { grid-template-columns: 1fr; }
+  .gor-media { grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: .6rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+  .gor-media__item:hover { transform: none; }
+}
+
+/* @@GOR-ADMIN-PHONE@@ */
+/* =========================================================================
+   11. THE PANEL ON A PHONE
+
+   A 680px table inside a horizontal scroller is readable but not usable -
+   you read a row by dragging it past the window, and the action at the end
+   of the row is always off screen. Below 560px the row becomes a card: the
+   column name sits beside its value, and the actions come to rest at the
+   bottom of the card where a thumb is.
+
+   The table element stays a table, so sorting, selection and the markup the
+   live WordPress list tables use all keep working unchanged.
+   ========================================================================= */
+@media (max-width: 560px) {
+  .gor-t__wrap { overflow-x: visible; background: none; box-shadow: none; }
+  .gor-t { min-width: 0; display: block; }
+  .gor-t thead { display: none; }
+  .gor-t tbody, .gor-t tr, .gor-t td { display: block; width: auto; }
+
+  .gor-t tbody tr {
+    margin-bottom: .75rem; padding: .9rem 1rem .5rem;
+    background: var(--surface); border-radius: 2px;
+    box-shadow: 0 0 0 1px var(--rule-2);
+  }
+  .gor-t tbody tr:last-child td { border-bottom: 0; }
+
+  .gor-t td {
+    padding: .5rem 0; border-bottom: 1px solid var(--rule-2);
+    display: grid; grid-template-columns: 8.5rem 1fr; gap: .75rem; align-items: start;
+  }
+  .gor-t td::before {
+    content: attr(data-label);
+    font-size: .56rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--ink-soft); padding-top: .2rem;
+  }
+  /* A cell with no label is the actions cell - it spans and sits last. */
+  .gor-t td:not([data-label])::before { content: none; }
+  .gor-t td.gor-t__act {
+    display: flex; gap: 1.1rem; justify-content: flex-start;
+    text-align: left; border-bottom: 0; padding-top: .7rem;
+  }
+  .gor-t__act .gor-link + .gor-link { margin-left: 0; }
+  /* The row title carries the card, so it reads as a heading. */
+  .gor-t td:first-child { grid-template-columns: 1fr; }
+  .gor-t td:first-child::before { display: none; }
+  .gor-t__title { font-size: 1.05rem; }
+  .gor-t__empty { display: block; padding: 1.5rem 1rem; text-align: center; }
+
+  /* Touch sizing: these are the only controls in a row. */
+  .gor-link, .gor-t__title { min-height: 44px; }
+  .gor-t__act .gor-link { display: inline-flex; align-items: center; }
+}
