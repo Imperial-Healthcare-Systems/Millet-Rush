@@ -309,9 +309,33 @@
   function counters() {
     $$('[data-count]').forEach(function (el) {
       var to = parseFloat(el.dataset.count), suffix = el.dataset.suffix || '';
-      if (!motion) { el.textContent = to.toLocaleString('en-IN') + suffix; return; }
+      var fmt = function (n) { return Math.round(n).toLocaleString('en-IN') + suffix; };
+
+      if (!motion) { el.textContent = fmt(to); return; }
+
+      /* A figure under ten spends almost the whole tween rounding to zero and
+         then flips to its value at the end, which reads as a fault rather
+         than as a count. It is shown instead. */
+      if (to < 10) { el.textContent = fmt(to); return; }
+
+      /* The whole row shares one trigger and arrives in sequence; four
+         counters finishing on the same frame read as one event. */
+      var row = el.closest('.stats');
+      var peers = row ? Array.prototype.slice.call(row.querySelectorAll('[data-count]')) : [el];
+
+      el.textContent = fmt(0);
       var o = { v: 0 };
-      gsap.to(o, { v: to, duration: 2.2, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 85%', once: true }, onUpdate: function () { el.textContent = Math.round(o.v).toLocaleString('en-IN') + suffix; } });
+      gsap.to(o, {
+        v: to,
+        duration: 1.9,
+        delay: peers.indexOf(el) * 0.15,
+        /* Quadratic, not quartic. power3.out put 87% of the climb into the
+           first 40% of the tween and crawled the rest, so the number was
+           never actually readable on its way up. */
+        ease: 'power1.out',
+        scrollTrigger: { trigger: row || el, start: 'top 85%', once: true },
+        onUpdate: function () { el.textContent = fmt(o.v); }
+      });
     });
   }
 
