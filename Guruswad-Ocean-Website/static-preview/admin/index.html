@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin panel — Guruswad Ocean</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#032b08">
+<link rel="icon" href="../assets/img/logo/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/fonts.css?v=1176337315">
+<link rel="stylesheet" href="../assets/css/admin.css?v=1176337315">
+<link rel="stylesheet" href="preview.css?v=1176337315">
+</head>
+<body class="gor-screen">
+
+<!-- ============================ sign-in ============================ -->
+<div class="login-wrap">
+  <form class="login" id="login" novalidate>
+    <img class="login__mark" src="../assets/img/logo/milletrush-color.svg" alt="MilletRush" width="988" height="500">
+    <p class="login__eyebrow">Site control</p>
+    <h1>Guruswad Ocean</h1>
+    <p class="sub">Sign in to manage the website</p>
+    <p class="err" id="err" role="alert">That email and password do not match.</p>
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" type="email" autocomplete="username" required>
+    </div>
+    <div class="field">
+      <label for="pass">Password</label>
+      <input id="pass" type="password" autocomplete="current-password" required>
+    </div>
+    <button type="submit">Sign in</button>
+    <p class="demo"><b>Design preview.</b> This screen stands in for <b>wp-login.php</b>.
+      There is no server behind a static page, so the check runs in your browser and is
+      not real security — the live panel uses WordPress accounts.
+      <a href="../index.html">Back to the site</a></p>
+  </form>
+</div>
+
+<!-- ============================= panel ============================= -->
+<div class="panel">
+  <div class="bar">
+    <b>Guruswad Ocean</b>
+    <span class="sep" aria-hidden="true"></span>
+    <span class="muted">Site control panel</span>
+    <span class="right">
+      <span class="muted">Signed in as Admin</span>
+      <span class="sep" aria-hidden="true"></span>
+      <button type="button" id="out">Log out</button>
+    </span>
+  </div>
+
+  <p class="note"><strong>Design preview.</strong>
+    <span>Every screen below works: add, edit, delete, search and export. Changes are
+    kept in this browser only — on the live site they are saved by WordPress.</span>
+    <a href="../index.html">&larr; back to the site</a>
+    <button type="button" class="bar-reset" id="reset" style="border:0;background:none;color:#fcf9f5;cursor:pointer;font:inherit;font-size:12.5px;text-decoration:underline">Reset demo data</button></p>
+
+  <div class="shell">
+    <nav class="side" aria-label="WordPress menu">
+			<p class="side__label">Overview</p>
+			<a href="#/" data-nav="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V4M4 20h16"/><path d="m7 15 4-4 3 3 5-6"/></svg> Dashboard</a>
+			<a href="#/" data-nav="guruswad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="10" r="6"/><path d="m9 15-1.5 6L12 19l4.5 2L15 15"/><path d="m9.5 10 1.8 1.8L15 8.3"/></svg> Guruswad Ocean<span class="bub" data-bubble hidden></span></a>
+			<div class="grp">
+			<p class="side__label">Content &amp; trade</p>
+			<a href="#/pages" data-nav="pages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg> Pages</a>
+			<a href="#/news" data-nav="news"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></svg> Posts</a>
+			<a href="#/products" data-nav="products"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h16l-1-5H5L4 9Z"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg> Products</a>
+			<a href="#/orders" data-nav="orders"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 7Z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg> WooCommerce</a>
+			<a href="#/enquiries" data-nav="enquiries"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg> Enquiries<span class="bub" data-bubble hidden></span></a>
+			<a href="#/media" data-nav="media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg> Media</a>
+			<a href="#/i18n" data-nav="i18n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg> English &amp; Marathi</a>
+			</div>
+    </nav>
+
+    <div class="body">
+      <!-- dashboard -->
+      <section id="home" class="gor-admin">
+        <div class="gor-masthead">
+          <span class="gor-masthead__eyebrow">Site control</span>
+          <h1>Guruswad Ocean</h1>
+          <p><strong data-waiting>0</strong> enquiries are waiting. Everything the site needs day to day is below &mdash; each card opens the screen that does the job.</p>
+        </div>
+
+        <div class="gor-admin__grid">
+				<a class="gor-card" href="#/enquiries"><svg class="gor-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg><span class="gor-card__body"><strong>Enquiries<em class="gor-card__count" data-count="enquiries" hidden></em></strong><span>All seven enquiry types, with status and CSV export.</span></span></a>
+				<a class="gor-card" href="#/pages"><svg class="gor-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h8l4 4v14H6V3Z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg><span class="gor-card__body"><strong>Pages<em class="gor-card__count" data-count="pages" hidden></em></strong><span>Add and edit site pages and their content blocks.</span></span></a>
+				<a class="gor-card" href="#/news"><svg class="gor-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></svg><span class="gor-card__body"><strong>News &amp; announcements<em class="gor-card__count" data-count="news" hidden></em></strong><span>Publish updates, recognitions and press.</span></span></a>
+				<a class="gor-card" href="#/brands"><svg class="gor-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="10" r="6"/><path d="m9 15-1.5 6L12 19l4.5 2L15 15"/><path d="m9.5 10 1.8 1.8L15 8.3"/></svg><span class="gor-card__body"><strong>Brands<em class="gor-card__count" data-count="brands" hidden></em></strong><span>MilletRush and any future brand, each with its own world.</span></span></a>
+				<a class="gor-card" href="#/markets"><svg class="gor-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg><span class="gor-card__body"><strong>Export markets<em class="gor-card__count" data-count="markets" hidden></em></strong><span>Markets on the trade map. Give each a latitude, longitude and status.</span></span></a>
+				<a class="gor-card" href="#/stories"><svg class="gor-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="7" r="3"/><circle cx="16" cy="7" r="3"/><path d="M2.5 20c.8-4 3-6 5.5-6s4.7 2 5.5 6M10.5 20c.8-4 3-6 5.5-6s4.7 2 5.5 6"/></svg><span class="gor-card__body"><strong>Farmer &amp; SHG stories<em class="gor-card__count" data-count="stories" hidden></em></strong><span>The impact stories shown across the Farmers pages.</span></span></a>
+				<a class="gor-card" href="#/leadership"><svg class="gor-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 9h14"/><path d="M7 9c0-3 2.2-5 5-5s5 2 5 5"/><path d="M8.5 11a3.5 3.5 0 0 0 7 0"/><path d="M4 21c1.2-3.6 4.2-5.5 8-5.5s6.8 1.9 8 5.5"/></svg><span class="gor-card__body"><strong>Leadership</strong><span>Board and management shown on About Us.</span></span></a>
+				<a class="gor-card" href="#/certs"><svg class="gor-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg><span class="gor-card__body"><strong>Certifications<em class="gor-card__count" data-count="certs" hidden></em></strong><span>Badges and collaborations shown as proof.</span></span></a>
+				<a class="gor-card" href="#/media"><svg class="gor-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span class="gor-card__body"><strong>Media library</strong><span>Upload and manage photographs and video.</span></span></a>
+				<a class="gor-card" href="#/i18n"><svg class="gor-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg><span class="gor-card__body"><strong>English &amp; Marathi content</strong><span>Every piece of site copy in both languages, side by side.</span></span></a>
+				<a class="gor-card" href="#/hero"><svg class="gor-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19C5 10 10 4 20 4c0 10-6 15-15 15Z"/><path d="M5 19 13 11"/></svg><span class="gor-card__body"><strong>Banners &amp; hero media</strong><span>Home hero video or image, and the impact numbers beneath it.</span></span></a>
+				<a class="gor-card" href="#/business"><svg class="gor-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg><span class="gor-card__body"><strong>Business details</strong><span>Phone, WhatsApp, email, address and the export catalogue.</span></span></a>
+				<a class="gor-card" href="#/routing"><svg class="gor-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16v11H8l-4 4V5Z"/><path d="M8 9h8M8 12h5"/></svg><span class="gor-card__body"><strong>Enquiry routing</strong><span>Which inbox each of the seven enquiry types reaches.</span></span></a>
+				<a class="gor-card" href="#/products"><svg class="gor-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 9h16l-1-5H5L4 9Z"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg><span class="gor-card__body"><strong>Products, prices &amp; stock<em class="gor-card__count" data-count="products" hidden></em></strong><span>Add products, set prices, manage inventory and packaging.</span></span></a>
+				<a class="gor-card" href="#/orders"><svg class="gor-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 7h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 7Z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg><span class="gor-card__body"><strong>Orders<em class="gor-card__count" data-count="orders" hidden></em></strong><span>Customer orders, invoices and fulfilment.</span></span></a>
+        </div>
+
+        <h2>Reporting</h2>
+        <p>
+          <a class="gor-btn gor-btn--primary" href="#/enquiries">Enquiries &amp; CSV export</a>
+          <a class="gor-btn" href="#/analytics">Analytics &amp; Search Console</a>
+        </p>
+        <p class="description">Website analytics live in Google Analytics and Search Console, which are connected during handover. Their dashboards stay outside WordPress so the data is owned by the company, not the theme.</p>
+      </section>
+
+      <!-- module screens, rendered by admin.js -->
+      <div id="screen" tabindex="-1" hidden></div>
+    </div>
+  </div>
+</div>
+
+<script src="admin.js?v=1176337315"></script>
+<script>
+(function () {
+  'use strict';
+
+  /* SHA-256 of "email:password" so the password is not sitting in the page as
+     plain text. This is obfuscation, not security: the check runs in the
+     browser, so anyone determined gets past it. It demonstrates the sign-in
+     screen; real authentication is wp-login.php. */
+  var EXPECT = 'd91f04fe7b5b310a8e8357568f72286d758eb2745f841b0c743d0d6cbc35231c';
+  var KEY = 'gor_admin_demo';
+  var booted = false;
+
+  function show(on) {
+    document.body.classList.toggle('in', on);
+    try { on ? sessionStorage.setItem(KEY, '1') : sessionStorage.removeItem(KEY); } catch (e) {}
+    if (on && !booted && window.GOR_ADMIN) { booted = true; window.GOR_ADMIN.boot(); }
+  }
+
+  function sha256(str) {
+    if (window.crypto && window.crypto.subtle && window.TextEncoder) {
+      return window.crypto.subtle.digest('SHA-256', new TextEncoder().encode(str))
+        .then(function (buf) {
+          return Array.prototype.map.call(new Uint8Array(buf), function (b) {
+            return ('0' + b.toString(16)).slice(-2);
+          }).join('');
+        });
+    }
+    return Promise.reject(new Error('no-subtle'));
+  }
+
+  try { if (sessionStorage.getItem(KEY) === '1') { show(true); } } catch (e) {}
+
+  var form = document.getElementById('login');
+  var err = document.getElementById('err');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = document.getElementById('email').value.trim().toLowerCase();
+    var pass = document.getElementById('pass').value;
+    err.classList.remove('on');
+    sha256(email + ':' + pass).then(function (h) {
+      if (h === EXPECT) { show(true); form.reset(); }
+      else { err.textContent = 'That email and password do not match.'; err.classList.add('on'); }
+    }).catch(function () {
+      err.textContent = 'This browser cannot run the preview check over an insecure connection. Open the page over http://localhost or https://.';
+      err.classList.add('on');
+    });
+  });
+
+  document.getElementById('out').addEventListener('click', function () {
+    show(false);
+    window.scrollTo(0, 0);
+  });
+
+  document.getElementById('reset').addEventListener('click', function () {
+    if (window.confirm('Reset every screen back to the seeded demo data?') && window.GOR_ADMIN) {
+      window.GOR_ADMIN.reset();
+    }
+  });
+})();
+</script>
+</body>
+</html>

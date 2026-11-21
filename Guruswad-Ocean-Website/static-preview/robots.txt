@@ -1,0 +1,15 @@
+# Guruswad Ocean Private Limited
+# The live site is served by WordPress, which generates this file from
+# inc/seo.php. This copy keeps the static preview honest.
+
+User-agent: *
+Allow: /
+
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /my-account/
+Disallow: /*?add-to-cart=
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: https://www.yourdomain.com/sitemap.xml
