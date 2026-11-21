@@ -390,6 +390,7 @@
     var o = gorProject(origin.lat, origin.lng);
     var gRoutes = el('g', { 'class': 'trade__routes' });
     var gNodes  = el('g', { 'class': 'trade__nodes' });
+    var labels  = [];
 
     markets.forEach(function (m) {
       var p  = gorProject(m.lat, m.lng);
@@ -408,7 +409,9 @@
            ' ' + p[0].toFixed(1) + ' ' + p[1].toFixed(1)
       }));
 
-      // Labels sit away from the origin so they never cross their own route.
+      // Labels start away from the origin so they never cross their own route.
+      // Where that puts two of them on top of each other, placeLabels() below
+      // moves the later one.
       var left = p[0] < o[0];
       var g = el('g', {
         'class': 'trade__node' + (m.status === 'entering' ? ' is-entering' : ''),
@@ -424,6 +427,7 @@
       t.textContent = m.name;
       g.appendChild(t);
       gNodes.appendChild(g);
+      labels.push({ text: t, p: p, left: left });
     });
 
     // --- origin -----------------------------------------------------------
@@ -438,6 +442,81 @@
 
     svg.appendChild(gRoutes);
     svg.appendChild(gNodes);
+
+    /* --- keep the labels off each other ---------------------------------
+       London and Rotterdam are 4.6 degrees apart, which on a 1000-unit world
+       is twelve units — so "United Kingdom" and "Europe" were printed on top
+       of one another, and "Saudi Arabia" and "UAE" very nearly were. Moving
+       the markets would be a lie about where they are, so instead each label
+       takes the first position that is actually clear: beside its own dot as
+       before, then above or below it, then on its other side. The first
+       market asked keeps its natural spot, so the common case is unchanged.
+
+       This runs after the SVG is in the document, because the width of a
+       label is the width the font gives it, not a guess from its length. */
+    (function placeLabels() {
+      if (!labels.length) return;
+      var PAD = 3, ABOVE = 10, BELOW = 4;   // the text box around its baseline
+      var dots = [], taken = [];
+
+      labels.forEach(function (L, i) {
+        dots.push({ x1: L.p[0] - 7, x2: L.p[0] + 7, y1: L.p[1] - 7, y2: L.p[1] + 7, own: i });
+      });
+      dots.push({ x1: o[0] - 10, x2: o[0] + 10, y1: o[1] - 10, y2: o[1] + 10, own: -1 });
+
+      function boxFor(L, c, w) {
+        var x = L.p[0] + c.dx, y = L.p[1] + c.dy, x1;
+        if (c.anchor === 'end') { x1 = x - w; }
+        else if (c.anchor === 'middle') { x1 = x - w / 2; }
+        else { x1 = x; }
+        return { x1: x1 - PAD, x2: x1 + w + PAD, y1: y - ABOVE - PAD, y2: y + BELOW + PAD };
+      }
+      function overlaps(a, b) {
+        return a.x1 < b.x2 && a.x2 > b.x1 && a.y1 < b.y2 && a.y2 > b.y1;
+      }
+      function clear(b, self) {
+        if (b.x1 < 2 || b.x2 > GOR_MAP.W - 2 || b.y1 < 2 || b.y2 > H - 2) return false;
+        var i;
+        for (i = 0; i < taken.length; i++) { if (overlaps(b, taken[i])) return false; }
+        for (i = 0; i < dots.length; i++) {
+          if (dots[i].own !== self && overlaps(b, dots[i])) return false;
+        }
+        return true;
+      }
+
+      labels.forEach(function (L, i) {
+        var w = 0;
+        try { w = L.text.getComputedTextLength(); } catch (e) { w = 0; }
+        if (!w) { w = L.text.textContent.length * 7.4; }
+
+        var near = L.left ? 'end' : 'start';
+        var far  = L.left ? 'start' : 'end';
+        var nx   = L.left ? -12 : 12;
+        // The vertical steps are larger than the box is tall (20 units), or a
+        // "lifted" label would still sit on the one it was moving away from.
+        var cands = [
+          { dx: nx,  dy: 4.5, anchor: near },    // where it was
+          { dx: nx,  dy: -19, anchor: near },    // same side, lifted
+          { dx: nx,  dy: 28,  anchor: near },    // same side, dropped
+          { dx: -nx, dy: 4.5, anchor: far },     // the other side
+          { dx: -nx, dy: -19, anchor: far },
+          { dx: -nx, dy: 28,  anchor: far },
+          { dx: 0,   dy: -22, anchor: 'middle' },
+          { dx: 0,   dy: 31,  anchor: 'middle' }
+        ];
+
+        var chosen = cands[0], box = boxFor(L, cands[0], w), j, b;
+        for (j = 0; j < cands.length; j++) {
+          b = boxFor(L, cands[j], w);
+          if (clear(b, i)) { chosen = cands[j]; box = b; break; }
+        }
+        L.text.setAttribute('x', (L.p[0] + chosen.dx).toFixed(1));
+        L.text.setAttribute('y', (L.p[1] + chosen.dy).toFixed(1));
+        L.text.setAttribute('text-anchor', chosen.anchor);
+        taken.push(box);
+      });
+    })();
+
     wrap.classList.add('is-drawn');
 
     // --- motion -----------------------------------------------------------
