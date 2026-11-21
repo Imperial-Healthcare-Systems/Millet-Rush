@@ -21,7 +21,7 @@ $gor_poster = gor_opt( 'hero_poster' );
 	$gor_hero_video  = $gor_video ? $gor_video : GOR_URI . '/assets/video/hero-millet.mp4';
 	?>
 	<div class="hero__media" aria-hidden="true">
-		<video class="hero__video" data-lazy-video muted loop playsinline preload="none"
+		<video class="hero__video" data-lazy-video muted loop playsinline disablepictureinpicture disableremoteplayback preload="none"
 			poster="<?php echo esc_url( $gor_hero_poster ); ?>">
 			<source data-src="<?php echo esc_url( $gor_hero_video ); ?>" type="video/mp4">
 		</video>
@@ -75,10 +75,39 @@ $gor_poster = gor_opt( 'hero_poster' );
 			</div>
 		</div>
 		<div class="pillars">
-			<div class="pillar" data-reveal><span class="pillar__num">01</span><h3><?php esc_html_e( 'Agriculture', 'guruswad' ); ?></h3><p><?php esc_html_e( 'Direct sourcing through our Farmer Producer Company and farmer development programmes.', 'guruswad' ); ?></p></div>
-			<div class="pillar" data-reveal><span class="pillar__num">02</span><h3><?php esc_html_e( 'Food Processing', 'guruswad' ); ?></h3><p><?php esc_html_e( 'Millet processing and manufacturing with technology from ICAR–IIMR collaboration.', 'guruswad' ); ?></p></div>
+			<div class="pillar" data-reveal><span class="pillar__num">01</span><h3><?php esc_html_e( 'Agriculture', 'guruswad' ); ?></h3><p><?php esc_html_e( 'Direct sourcing through CSC Sangli Jath MH Vishwabhumi Farmer Producer Company Ltd., with training and development run through the Association.', 'guruswad' ); ?></p></div>
+			<div class="pillar" data-reveal><span class="pillar__num">02</span><h3><?php esc_html_e( 'Food Processing', 'guruswad' ); ?></h3><p><?php esc_html_e( 'Millet processing and manufacturing, in technology collaboration with ICAR–IIMR.', 'guruswad' ); ?></p></div>
 			<div class="pillar" data-reveal><span class="pillar__num">03</span><h3><?php esc_html_e( 'Global Trade', 'guruswad' ); ?></h3><p><?php esc_html_e( 'Export, import and private-label partnerships for buyers across markets.', 'guruswad' ); ?></p></div>
 		</div>
+	</div>
+</section>
+
+<!-- 2b. OUR ORGANISATION — client letter §1.
+     The structure belongs on the home page, not only on About Us: a visitor
+     who reads nothing else should still learn that four bodies are involved
+     and which one does what. The compact form drops the mandate lists; the
+     data is in inc/organisation.php, shared with the About page. -->
+<section class="section section--cream2" id="organisation" aria-label="<?php esc_attr_e( 'Our organisation', 'guruswad' ); ?>">
+	<div class="container">
+		<div class="split" style="align-items:end;margin-bottom:var(--s-6)">
+			<div>
+				<span class="eyebrow" data-reveal><?php esc_html_e( 'Our organisation', 'guruswad' ); ?></span>
+				<h2 class="h-lg" data-split><?php esc_html_e( 'Four organisations, one chain.', 'guruswad' ); ?></h2>
+			</div>
+			<?php
+			$gor_about = get_pages(
+				array(
+					'meta_key'   => '_wp_page_template',
+					'meta_value' => 'page-templates/template-about.php',
+					'number'     => 1,
+				)
+			);
+			if ( $gor_about ) :
+				?>
+				<div style="text-align:right" data-reveal><a class="link-arrow" href="<?php echo esc_url( get_permalink( $gor_about[0]->ID ) . '#organisation' ); ?>"><?php esc_html_e( 'How the group is structured', 'guruswad' ); ?> <?php gor_the_icon( 'arrow' ); ?></a></div>
+			<?php endif; ?>
+		</div>
+		<?php gor_org_chain( true ); ?>
 	</div>
 </section>
 
@@ -197,6 +226,42 @@ $gor_poster = gor_opt( 'hero_poster' );
 		</div>
 	</div>
 </section>
+
+<?php
+// 7b. COMMON FACILITY CENTRE — client letter §3. The client named the CFC one
+// of their most important projects, so it has a band of its own between our
+// own manufacturing and the trade section. The status pill keeps it in the
+// future tense; the band is hidden until the CFC page exists.
+$gor_cfc_url = gor_org_link( 'cfc' );
+if ( $gor_cfc_url ) :
+	$gor_cfc_services = array(
+		__( 'Grain cleaning and grading', 'guruswad' ),
+		__( 'Millet processing', 'guruswad' ),
+		__( 'Jowar puffs and other value-added products', 'guruswad' ),
+		__( 'Flour, rava and instant mixes', 'guruswad' ),
+		__( 'Packaging and quality testing', 'guruswad' ),
+		__( 'Product development and processing training', 'guruswad' ),
+	);
+	?>
+<section class="section section--cream2" id="cfc">
+	<div class="container split split--wide-left" style="margin-bottom:var(--s-5)">
+		<div>
+			<span class="eyebrow" data-reveal><?php esc_html_e( 'Common Facility Centre', 'guruswad' ); ?></span>
+			<h2 class="h-lg" data-split><?php esc_html_e( 'A processing line the whole district can use.', 'guruswad' ); ?></h2>
+			<span class="status-pill status-pill--planned" data-reveal><?php esc_html_e( 'Planned project', 'guruswad' ); ?></span>
+		</div>
+		<p class="lead" data-reveal><?php esc_html_e( 'Planned as shared infrastructure — cleaning, grading, milling, puffing, packing and training, open to farmers, other producer companies, women’s self-help groups and small food processors, not only to our own production.', 'guruswad' ); ?></p>
+	</div>
+	<div class="container">
+		<ul class="check-list check-list--2col" data-reveal>
+			<?php foreach ( $gor_cfc_services as $gor_s ) : ?>
+				<li><?php echo esc_html( $gor_s ); ?></li>
+			<?php endforeach; ?>
+		</ul>
+		<p style="margin-top:var(--s-4)" data-reveal><a class="btn btn--ghost" href="<?php echo esc_url( $gor_cfc_url ); ?>"><?php esc_html_e( 'Inside the CFC project', 'guruswad' ); ?> <?php gor_the_icon( 'arrow' ); ?></a></p>
+	</div>
+</section>
+<?php endif; ?>
 
 <!-- 8. GLOBAL TRADE -->
 <?php get_template_part( 'template-parts/trade-map' ); ?>

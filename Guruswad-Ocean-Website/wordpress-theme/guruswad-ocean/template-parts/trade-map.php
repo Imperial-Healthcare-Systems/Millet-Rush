@@ -83,6 +83,19 @@ $gor_features = array(
 					</li>
 				<?php endforeach; ?>
 			</ul>
+			<?php
+			// Client letter §6: the list must not read as a list of customers.
+			$gor_has_active = false;
+			foreach ( $gor_markets as $gor_m ) {
+				if ( 'active' === $gor_m['status'] ) {
+					$gor_has_active = true;
+					break;
+				}
+			}
+			?>
+			<?php if ( ! $gor_has_active ) : ?>
+				<p class="trade__note"><?php esc_html_e( 'No market below is presented as an active export market. These are the territories we are working towards; trade has not commenced in them.', 'guruswad' ); ?></p>
+			<?php endif; ?>
 		</div>
 	</div>
 

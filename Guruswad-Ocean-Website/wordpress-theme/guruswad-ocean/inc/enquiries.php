@@ -23,6 +23,7 @@ function gor_enquiry_types() {
 		'import'   => __( 'Import enquiry', 'guruswad' ),
 		'investor' => __( 'Investor enquiry', 'guruswad' ),
 		'partner'  => __( 'Business partnership', 'guruswad' ),
+		'cfc'      => __( 'Common Facility Centre (CFC)', 'guruswad' ),
 	);
 }
 

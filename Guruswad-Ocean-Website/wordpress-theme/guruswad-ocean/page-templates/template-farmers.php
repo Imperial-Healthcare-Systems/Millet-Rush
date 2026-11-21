@@ -8,7 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 get_header();
 the_post();
-gor_page_hero( array( 'eyebrow' => __( 'Farmers & FPO Network', 'guruswad' ), 'title' => __( 'Growth that is shared at the <em>root</em>.', 'guruswad' ), 'lead' => __( 'Our Farmer Producer Company connects smallholder farmers, women’s self-help groups and local entrepreneurs into one millet value chain.', 'guruswad' ) ) );
+gor_page_hero( array( 'eyebrow' => __( 'Farmers & FPO Network', 'guruswad' ), 'title' => __( 'Growth that is shared at the <em>root</em>.', 'guruswad' ), 'lead' => __( 'CSC Sangli Jath MH Vishwabhumi Farmer Producer Company Ltd. brings smallholder farmers into membership and aggregates what they grow. Guruswad Agriculture and Food Association trains them, organises women’s self-help groups and promotes organic practice. Together they are the base of the chain.', 'guruswad' ) , 'variant' => 'farmers') );
 ?>
 
 <section class="section">
@@ -17,7 +17,7 @@ gor_page_hero( array( 'eyebrow' => __( 'Farmers & FPO Network', 'guruswad' ), 't
 			<div class="stat"><div class="stat__num" data-count="<?php echo esc_attr( (int) gor_opt( 'stat_farmers' ) ); ?>">0</div><div class="stat__label"><?php esc_html_e( 'Farmers in our network', 'guruswad' ); ?></div></div>
 			<div class="stat"><div class="stat__num" data-count="<?php echo esc_attr( (int) gor_opt( 'stat_shg' ) ); ?>">0</div><div class="stat__label"><?php esc_html_e( 'Women Self-Help Groups', 'guruswad' ); ?></div></div>
 			<div class="stat"><div class="stat__num" data-count="<?php echo esc_attr( (int) gor_opt( 'stat_entre' ) ); ?>">0</div><div class="stat__label"><?php esc_html_e( 'Small entrepreneurs', 'guruswad' ); ?></div></div>
-			<div class="stat"><div class="stat__num" data-count="<?php echo esc_attr( (int) gor_opt( 'stat_fpo' ) ); ?>">0</div><div class="stat__label"><?php esc_html_e( 'Farmer Producer Company', 'guruswad' ); ?></div></div>
+			<div class="stat"><div class="stat__num" data-count="<?php echo esc_attr( (int) gor_opt( 'stat_fpo' ) ); ?>">0</div><div class="stat__label"><?php esc_html_e( 'Farmer Producer Company', 'guruswad' ); ?><br><span style="opacity:.6"><?php esc_html_e( 'CSC Sangli Jath MH Vishwabhumi FPC Ltd.', 'guruswad' ); ?></span></div></div>
 		</div>
 	</div>
 </section>
@@ -67,6 +67,106 @@ if ( $gor_stories ) :
 <?php if ( get_the_content() ) : ?>
 <section class="section"><div class="container entry-content"><?php the_content(); ?></div></section>
 <?php endif; ?>
+
+<!-- WOMEN'S EMPOWERMENT & RURAL EMPLOYMENT — client letter §2.
+     Asked for as a section of its own, not as one card in a grid of six,
+     because it is a result of the business rather than a feature of it. -->
+<section class="section section--dark" id="women">
+	<div class="container">
+		<div class="section-head">
+			<span class="eyebrow" data-reveal><?php esc_html_e( 'Women’s empowerment & rural employment', 'guruswad' ); ?></span>
+			<h2 class="h-lg" data-split><?php esc_html_e( 'Paid work, in the village, for the women who do it.', 'guruswad' ); ?></h2>
+			<p class="lead" data-reveal><?php esc_html_e( 'Processing is where a crop gains most of its value, and processing is work. Keeping that work in the district — and routing it through women’s self-help groups rather than through a contractor — is how the value reaches the people who grew the grain.', 'guruswad' ); ?></p>
+		</div>
+		<div class="cards-2">
+			<article class="card" data-reveal>
+				<span class="card__icon"><?php gor_the_icon( 'women' ); ?></span>
+				<h3><?php esc_html_e( 'Women’s self-help groups', 'guruswad' ); ?></h3>
+				<p><?php esc_html_e( 'Groups organised through Guruswad Agriculture and Food Association, engaged in the work rather than consulted about it.', 'guruswad' ); ?></p>
+				<ul class="check-list">
+					<li><?php esc_html_e( 'Cleaning, grading and value addition', 'guruswad' ); ?></li>
+					<li><?php esc_html_e( 'Packing and finishing work contracted to the group', 'guruswad' ); ?></li>
+					<li><?php esc_html_e( 'Training in processing, hygiene and food safety', 'guruswad' ); ?></li>
+					<li><?php esc_html_e( 'Earnings paid to the group, not to an intermediary', 'guruswad' ); ?></li>
+					<li><?php esc_html_e( 'First call on capacity as the CFC is commissioned', 'guruswad' ); ?></li>
+				</ul>
+			</article>
+			<article class="card" data-reveal>
+				<span class="card__icon"><?php gor_the_icon( 'handshake' ); ?></span>
+				<h3><?php esc_html_e( 'Rural employment generation', 'guruswad' ); ?></h3>
+				<p><?php esc_html_e( 'A millet processed in the district employs people in the district. One moved to a city plant employs them there instead.', 'guruswad' ); ?></p>
+				<ul class="check-list">
+					<li><?php esc_html_e( 'Processing and packing work kept local', 'guruswad' ); ?></li>
+					<li><?php esc_html_e( 'Small rural enterprises supported, not displaced', 'guruswad' ); ?></li>
+					<li><?php esc_html_e( 'Shared equipment, so a small operator can take real orders', 'guruswad' ); ?></li>
+					<li><?php esc_html_e( 'Skills that remain after a season ends', 'guruswad' ); ?></li>
+				</ul>
+			</article>
+		</div>
+	</div>
+</section>
+
+<!-- PRODUCE AND WHAT IS MADE FROM IT — client letter §2, and §5 for the
+     statuses: nothing still in development may read as available. -->
+<section class="section" id="produce">
+	<div class="container">
+		<div class="section-head">
+			<span class="eyebrow" data-reveal><?php esc_html_e( 'Produce and products', 'guruswad' ); ?></span>
+			<h2 class="h-lg" data-split><?php esc_html_e( 'What the fields give us, and what we make of it.', 'guruswad' ); ?></h2>
+			<p class="lead" data-reveal><?php esc_html_e( 'Grain is bought from member farmers through the producer company, then cleaned, graded and processed. What the grain becomes is where the farmer’s price comes from.', 'guruswad' ); ?></p>
+		</div>
+		<div class="yield-flow" data-reveal>
+			<div>
+				<h3><?php esc_html_e( 'Sourced from our farmers', 'guruswad' ); ?></h3>
+				<ul class="check-list">
+					<li><?php esc_html_e( 'Sorghum — jowar', 'guruswad' ); ?></li>
+					<li><?php esc_html_e( 'Pearl millet — bajra', 'guruswad' ); ?></li>
+				</ul>
+				<p class="team-note"><?php esc_html_e( 'The full cropping list, season by season, to be supplied by the client.', 'guruswad' ); ?></p>
+			</div>
+			<div class="yield-flow__arrow" aria-hidden="true"><?php gor_the_icon( 'arrow' ); ?></div>
+			<div>
+				<h3><?php esc_html_e( 'Value added from it', 'guruswad' ); ?></h3>
+				<ul class="check-list">
+					<li><?php esc_html_e( 'Puffed sorghum snacks', 'guruswad' ); ?> <span class="status-pill status-pill--live"><?php esc_html_e( 'Available', 'guruswad' ); ?></span></li>
+					<li><?php esc_html_e( 'Stone-ground millet flours', 'guruswad' ); ?> <span class="status-pill status-pill--live"><?php esc_html_e( 'Available', 'guruswad' ); ?></span></li>
+					<li><?php esc_html_e( 'Rava', 'guruswad' ); ?> <span class="status-pill status-pill--planned"><?php esc_html_e( 'Planned', 'guruswad' ); ?></span></li>
+					<li><?php esc_html_e( 'Instant mixes', 'guruswad' ); ?> <span class="status-pill status-pill--planned"><?php esc_html_e( 'Planned', 'guruswad' ); ?></span></li>
+				</ul>
+				<p class="team-note"><?php esc_html_e( 'Rava and instant mixes are planned through the Common Facility Centre and are not yet on sale.', 'guruswad' ); ?></p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- ORGANIC FARMING — client letter §2. The client was explicit: promote
+     organic farming, and do not describe products as Certified Organic
+     without valid certification. Do not soften the disclosure below. -->
+<section class="section section--cream2" id="organic">
+	<div class="container split">
+		<div>
+			<span class="eyebrow" data-reveal><?php esc_html_e( 'Organic farming', 'guruswad' ); ?></span>
+			<h2 class="h-lg" data-split><?php esc_html_e( 'Organic practice, promoted field by field.', 'guruswad' ); ?></h2>
+			<p class="lead" data-reveal><?php esc_html_e( 'Guruswad Agriculture and Food Association promotes organic farming across the network — the method, the inputs and the training behind it, rather than a label on a pack.', 'guruswad' ); ?></p>
+			<ul class="check-list" data-reveal>
+				<li><?php esc_html_e( 'Training in organic method and input preparation', 'guruswad' ); ?></li>
+				<li><?php esc_html_e( 'Soil health and crop rotation on rain-fed land', 'guruswad' ); ?></li>
+				<li><?php esc_html_e( 'Millets as a crop that already asks little of the soil', 'guruswad' ); ?></li>
+				<li><?php esc_html_e( 'Farmers supported towards certification where they want it', 'guruswad' ); ?></li>
+			</ul>
+		</div>
+		<div>
+			<?php
+			gor_disclosure(
+				'shield',
+				'<p><strong>' . esc_html__( 'We do not describe any product on this site as Certified Organic.', 'guruswad' ) . '</strong> '
+				. esc_html__( 'Promotion of organic farming is a development activity: it is what the Association teaches and encourages across the network.', 'guruswad' ) . '</p>'
+				. '<p>' . esc_html__( 'Produce or a product will be called organic here only when a valid certification covers that specific lot, and the certificate will be named when it is. Until then, organic practice is described as practice — which is what it is.', 'guruswad' ) . '</p>'
+			);
+			?>
+		</div>
+	</div>
+</section>
 
 <?php
 gor_cta_band();

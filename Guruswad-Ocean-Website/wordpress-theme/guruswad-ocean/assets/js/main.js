@@ -22,47 +22,91 @@
   /* ---------------------------------------------------------------
      0. Decorative film — attached, never assumed
 
-     These videos are texture, not content: the poster frame says the
-     same thing. So the file is only fetched when it is worth the bytes
-     — a wide screen, an unmetered connection, and the section actually
-     coming into view. Everywhere else the poster is the finished state,
-     which is also the prefers-reduced-data path.
+     The hero and footer films are texture, not content: the still frame
+     underneath says the same thing, so the file is only fetched when it is
+     worth the bytes, and only while it is on screen.
+
+     "Worth the bytes" used to include a width test, which refused every
+     viewport under 760px — so no phone played either film however good its
+     wi-fi, while a laptop tethered to 3G played both. Width is a layout
+     question. Affordability is a question about the connection, and that is
+     what is asked here.
      --------------------------------------------------------------- */
   (function () {
     var vids = $$('video[data-lazy-video]');
     if (!vids.length) return;
 
-    var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-    var metered = !!(conn && (conn.saveData || /^(slow-)?2g$/.test(conn.effectiveType || '')));
-    var thin = window.matchMedia('(prefers-reduced-data: reduce)').matches;
-    var narrow = window.matchMedia('(max-width: 760px)').matches;
+    var mqMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var mqData = window.matchMedia('(prefers-reduced-data: reduce)');
 
-    if (metered || thin || narrow) return;   // poster stays, and that is correct
+    function affordable() {
+      /* The stylesheet hides the film under either of these. Asking again
+         here is what stops the file being downloaded in order to be hidden. */
+      if (mqMotion.matches || mqData.matches) return false;
 
-    var attach = function (v) {
+      var c = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+      if (!c) return true;                      /* nothing reported — allow */
+      if (c.saveData) return false;
+      if (/^(slow-2g|2g|3g)$/.test(c.effectiveType || '')) return false;
+      /* downlink is a rounded estimate in Mbit/s. Below 1.5 an eight-second
+         loop lands after the section has already been scrolled past. */
+      if (typeof c.downlink === 'number' && c.downlink > 0 && c.downlink < 1.5) return false;
+      return true;
+    }
+
+    function attach(v) {
       if (v.dataset.lazyVideo === 'on') return;
       v.dataset.lazyVideo = 'on';
-      $$('source[data-src]', v).forEach(function (src) {
-        src.src = src.getAttribute('data-src');
-        src.removeAttribute('data-src');
+      $$('source[data-src]', v).forEach(function (s) {
+        s.src = s.getAttribute('data-src');
+        s.removeAttribute('data-src');
       });
+      /* iOS wants muted as a property, not only as an attribute, before it
+         will autoplay inline. Setting both costs nothing. */
+      v.muted = true;
+      v.defaultMuted = true;
+      v.addEventListener('playing', function () { v.classList.add('is-playing'); });
       v.load();
+    }
+
+    function play(v) {
       var p = v.play();
-      /* Autoplay can still be refused (low power mode, a browser policy).
-         Nothing to do about it — the poster is already on screen. */
+      /* Autoplay can still be refused — iOS Low Power Mode, a browser policy.
+         The still is already on screen underneath, so there is nothing to do
+         and nothing to tell the visitor. */
       if (p && p.catch) p.catch(function () {});
-    };
+    }
 
-    if (!('IntersectionObserver' in window)) { vids.forEach(attach); return; }
+    if (!('IntersectionObserver' in window)) {
+      if (affordable()) vids.forEach(function (v) { attach(v); play(v); });
+      return;
+    }
 
+    /* The observer is deliberately never disconnected. A film that has
+       scrolled away is paused instead of left decoding behind the page, which
+       on a phone is the difference between a warm battery and a flat one. */
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (!e.isIntersecting) return;
-        attach(e.target);
-        io.unobserve(e.target);
+        var v = e.target;
+        v.dataset.inView = e.isIntersecting ? '1' : '0';
+        if (!e.isIntersecting) { if (!v.paused) v.pause(); return; }
+        if (!affordable()) return;
+        attach(v);
+        if (document.visibilityState !== 'hidden') play(v);
       });
-    }, { rootMargin: '300px 0px' });
+    }, { rootMargin: '200px 0px' });
     vids.forEach(function (v) { io.observe(v); });
+
+    /* Backgrounded tab: stop decoding. On return, resume only what is still
+       on screen — the observer will not fire again on its own. */
+    document.addEventListener('visibilitychange', function () {
+      var hidden = document.visibilityState === 'hidden';
+      vids.forEach(function (v) {
+        if (v.dataset.lazyVideo !== 'on') return;
+        if (hidden) { if (!v.paused) v.pause(); }
+        else if (v.dataset.inView === '1') play(v);
+      });
+    });
   })();
 
   /* ---------------------------------------------------------------
@@ -414,7 +458,10 @@
       // moves the later one.
       var left = p[0] < o[0];
       var g = el('g', {
-        'class': 'trade__node' + (m.status === 'entering' ? ' is-entering' : ''),
+        /* The status is whatever the data says — target, potential, or active
+           once trade has commenced. Hard-coding one of them here is what made
+           'entering' the only state the map could draw. */
+        'class': 'trade__node' + (m.status ? ' is-' + m.status : ''),
         'data-market': m.slug || ''
       });
       g.appendChild(el('circle', { 'class': 'trade__halo', cx: p[0].toFixed(1), cy: p[1].toFixed(1), r: 9 }));

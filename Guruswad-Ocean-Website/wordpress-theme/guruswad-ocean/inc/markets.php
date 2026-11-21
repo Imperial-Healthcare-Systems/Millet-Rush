@@ -11,7 +11,8 @@
  * Editors set a real latitude and longitude per market under Products → Export
  * Markets; the map projects them. Nothing here invents a statistic, a volume or
  * a certification — only the market's name, where it is on the globe, and
- * whether the company is serving it or entering it.
+ * whether it is a target market, a potential market, or one where trade has
+ * actually commenced. The default is the most cautious of the three.
  *
  * @package Guruswad_Ocean
  */
@@ -33,14 +34,23 @@ function gor_market_origin() {
 }
 
 /**
- * Statuses a market may carry. Deliberately only two, plus the origin.
+ * Statuses a market may carry.
+ *
+ * Target and Potential describe intent; Active describes a market where trade
+ * has commenced. The client's instruction is that a territory is not shown as
+ * active before that is true, so Active is set by hand, per market, and never
+ * by default.
  *
  * @return array
  */
 function gor_market_statuses() {
 	return array(
-		'serving'  => __( 'Serving', 'guruswad' ),
-		'entering' => __( 'Entering', 'guruswad' ),
+		'target'    => __( 'Target Market', 'guruswad' ),
+		'potential' => __( 'Potential Market', 'guruswad' ),
+		// Only for a market where commercial trade has actually commenced. The
+		// client asked that no territory be shown as an active export market
+		// before that, so nothing carries this status until they set it.
+		'active'    => __( 'Active Market', 'guruswad' ),
 	);
 }
 
@@ -51,17 +61,20 @@ function gor_market_statuses() {
  * their real coordinates. They are a starting point for the taxonomy, not a
  * claim: the moment one `gor_market` term exists, this list is ignored.
  *
+ * Every entry is a target or a potential market. None is active, because trade
+ * has not commenced in any of them (client letter §6).
+ *
  * @return array
  */
 function gor_market_defaults() {
 	return array(
-		array( 'name' => __( 'United Kingdom', 'guruswad' ),  'lat' => 51.51,  'lng' => -0.13,  'status' => 'entering' ),
-		array( 'name' => __( 'Europe', 'guruswad' ),          'lat' => 51.92,  'lng' => 4.48,   'status' => 'entering' ),
-		array( 'name' => __( 'USA', 'guruswad' ),             'lat' => 40.71,  'lng' => -74.01, 'status' => 'entering' ),
-		array( 'name' => __( 'Saudi Arabia', 'guruswad' ),    'lat' => 24.71,  'lng' => 46.68,  'status' => 'serving' ),
-		array( 'name' => __( 'UAE', 'guruswad' ),             'lat' => 25.20,  'lng' => 55.27,  'status' => 'serving' ),
-		array( 'name' => __( 'South-East Asia', 'guruswad' ), 'lat' => 1.35,   'lng' => 103.82, 'status' => 'serving' ),
-		array( 'name' => __( 'Australia', 'guruswad' ),       'lat' => -33.87, 'lng' => 151.21, 'status' => 'entering' ),
+		array( 'name' => __( 'United Kingdom', 'guruswad' ),  'lat' => 51.51,  'lng' => -0.13,  'status' => 'potential' ),
+		array( 'name' => __( 'Europe', 'guruswad' ),          'lat' => 51.92,  'lng' => 4.48,   'status' => 'potential' ),
+		array( 'name' => __( 'USA', 'guruswad' ),             'lat' => 40.71,  'lng' => -74.01, 'status' => 'potential' ),
+		array( 'name' => __( 'Saudi Arabia', 'guruswad' ),    'lat' => 24.71,  'lng' => 46.68,  'status' => 'target' ),
+		array( 'name' => __( 'UAE', 'guruswad' ),             'lat' => 25.20,  'lng' => 55.27,  'status' => 'target' ),
+		array( 'name' => __( 'South-East Asia', 'guruswad' ), 'lat' => 1.35,   'lng' => 103.82, 'status' => 'target' ),
+		array( 'name' => __( 'Australia', 'guruswad' ),       'lat' => -33.87, 'lng' => 151.21, 'status' => 'potential' ),
 	);
 }
 
@@ -93,7 +106,7 @@ function gor_markets() {
 				'slug'   => $t->slug,
 				'lat'    => (float) $lat,
 				'lng'    => (float) $lng,
-				'status' => array_key_exists( $status, gor_market_statuses() ) ? $status : 'serving',
+				'status' => array_key_exists( $status, gor_market_statuses() ) ? $status : 'potential',
 			);
 		}
 	}
