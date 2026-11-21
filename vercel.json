@@ -1,5 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "outputDirectory": "Guruswad-Ocean-Website/static-preview",
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/", "destination": "/Guruswad-Ocean-Website/static-preview/index.html" },
+    { "source": "/:path*", "destination": "/Guruswad-Ocean-Website/static-preview/:path*" }
+  ]
 }
