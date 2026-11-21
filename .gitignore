@@ -1,0 +1,28 @@
+# Editor and OS noise
+node_modules/
+.vscode/
+.idea/
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Anything that could carry a key. Turnstile, GA4 and Search Console values
+# are Customizer settings, never files - keep it that way.
+.env
+.env.*
+*.pem
+*.key
+
+# Raw stock footage, not referenced by the site. The two clips the site does
+# use are hero-millet.mp4 and footer-field.mp4 under assets/video/.
+/Millet_and_sorghum_field_movement_*.mp4
+/Millet_crops_swaying_in_breeze_*.mp4
+
+# The commissioning documents. This repository is public; the brief and the
+# blueprint are the client's internal papers, so they stay out of it and are
+# held with the project files instead.
+*.docx
+
+# Packaged theme. Built from the source beside it, so it only goes stale here.
+*.zip
